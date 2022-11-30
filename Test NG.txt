@@ -1,0 +1,344 @@
+ Test NG
+               
+       NG - Next Generation
+       It is a Test Driven Development.
+       It is inspired from j - unit
+
+           J-Unit                                             TestNG
+  it is an open source frame work                     it is a java based frame work
+  it does not support to run parallel tests           it  support to run parallel tests
+  it does not support Advanced annotation            it support Advanced annotation
+  grouping tests together is not possible             tests can be grouped together and run parallel
+  dependency test are missing                         dependency test are available
+  hard assert only                                    hard assert and soft assert 
+  Methods should be public                            Methods can be public or private
+                                 Annotations
+  @Before                                             @BeforeMethod      
+  @After                                              @AfterMethod 
+  @Test                                               @Test
+ 
+
+intallation :
+
+way 1 :
+        help ---> Eclipse Market place ----> find ----> testng ---->go
+        install confirm t&c okay install anyway restart
+
+way 2 :
+        install from update site 
+        search testing download in browser 
+
+
+
+Features
+ 
+
+Simple annotations
+features or attribute :
+           priority
+           enabled
+           InvocationCount
+           invocationTimeOut
+           expected exception 
+           groups
+           timeouts
+           Dependsonmethods
+           description
+           always run
+           dataprovider
+           dataproviderclass
+           Retryanalyzer
+Annotations
+
+@Test
+       it runs the TestNG features
+      it runs based on ASCII value if we have multiple test
+
+order
+       @BeforeSuite
+                    @BeforeTest
+                                @BeforeClass
+                                             @BeforeMethod
+                                                         @Test ---->abc
+                                                         @Test ---->xyz
+                                             @AfterMethod
+                                @AfterClass
+                    @AfterTest
+       @AfterSuite
+
+if we give multiple @test cases it will execute 
+Other annotations
+@Ignore
+@Parameters
+@DataProvider
+@Optional
+
+
+Attributes
+1.priority
+syntax 
+       @Test(Attribute=Value)
+       @Test(priority=0)
+            it will run the test cases depends upon the priority we given
+            if we use priority attribute we can run our test case in customized order.
+            default value of priority.
+eg:
+-5 -4 -3 -2 -1 0 1 2 3 4 5
+
+importent : 
+            if we do not give any priority it will consider as zero
+            if two or more test case have same priority number it will go by ASCII
+
+
+Ignore :
+           to ignore a particular test case or multiple test cases
+ways
+     by using @Ignore annotation above @Test
+
+
+     using enabled attribute in @Test  with true or false value , default value of enabled is true , @Tag(enabled=true)
+
+
+     in xml file we use exclude tag
+
+     changes in .xml dont affect java file but changes in java file affect the .xml
+
+Invocation Count:
+                it will run a test case multiple times as we want
+                it will be executed in sequential order 
+Syntax :
+        @Test(invocationCount = 2)
+                  
+                default value of invocationCount is 1 
+
+Invocation Timeout
+                   it is applicable only when we use it along with Invocation Count 
+                   the maximum number of milliseconds that the total number of invocation on this test method should take 
+
+Syntax :
+          @Test(invocationCount=4,invocationTimeout=milliseconds)
+          @Test(invocationCount=4,invocationTimeout=5000)
+  for the above test case it must run the case 4 times in 5000 milliseconds i.e 5 sec if it cant complete the test case 4 times in 5 sec then the test case will be marked as failure
+  and it will throw ThreadTimeOutException at run time 
+
+Description :
+             
+          we can provide a description to all tests
+          it must be string
+          it have a default standard output stream
+
+DependsOnMethods : 
+                    allows a test method to depend on a single or a group of test methods
+
+Syntax 
+             for same class method 
+                                   @Test(dependsOnMethods = "methodname")
+             for outside class method 
+                                   @Test(dependsOnMethods = "pakagename.classname.methodname")
+
+if we use dependsOnMethods and priority at same time it will go for depends on method
+if dependsonmethod fails the depended method will marked as skip
+
+ExpectedException
+
+it is only used for negative test cases  
+
+syntax/
+        @Test(expectedException= Type.class)
+
+TimeOut
+ we can set time with TimeOut and the test cast must be finished with in thart time period
+ time unit in timeout is milli seconds 
+ if the execution time is less than given time out testcase pass
+ if the execution takes more time than given timeout testcase will fail and it will throw ThreadTimeOutException at run time 
+ total timeout = timeout + impli or excli wait + thread.sleep
+
+Groups
+                  Does not available in j unit
+                  in TestNG we can use it to make different test cases as a group
+syntax
+@Test(groups="GroupName")
+  
+in xml file
+             we give <groups>tag must be inside the test outside the classes       
+             inside the groups we give <run> tag
+             and inside run tag we give include or exclude tag
+<test>
+      <groups>
+        <run>
+         <include name = "groupName"/>
+        </run>
+      </groups>
+<classes>
+
+groups of groups
+
+                      groups tag must be inside the test and outside the classes
+syntax 
+<test>
+      <groups>
+              <define name ="GroupOfGroupsName">
+                   <include name = "Group1"/>
+                   <include name = "Group2"/>
+              </define>
+              <run>
+                   <include name = "GroupOfGroupsName"/>
+              </run>
+       <groups>
+</test>
+
+failed test cases
+            if any test case fails it will be stored in test-output folder as testng-failed.xml
+            it will be over-raided every time test case failure
+
+Report :
+          default report format : .html
+          name : index
+          location : inside the test-output folder
+
+allwaysRun 
+       
+          default value false
+          if we give true in allwaysRun it will run the test case even when dependsOnMethod fails without skipping
+
+
+parameter 
+ pass the single data value in .xml
+ pass the multiple data values in dataprovider
+  
+
+single parameter
+
+        if we want to pass the data we convert .java into .xml file
+        in xml file we give <parameter> inside the suite or inside the test but outside classes
+        
+        <parameter name= ".java reference name"value  = "data"/>
+in java
+             we must use use @Parameters in the .java file to give the data from xml file
+             @Parameters({"refNmae1","refname2"})
+to give data in java file itself we can use @Optional 
+if have both  @Optional and @Parameters the priority goes to  @Parameters
+if there is no  @Parameters in xml file now priority goes to @Optional
+
+
+Data Provider
+
+      it is a annotation
+      it will helpful to provide data for @TestCases .
+      return type : object[][]  ----> object 2d array
+step :
+
+     use @DataProvider followed by a method with data .
+     DataProvider must return the [][] values.
+     use dataProvider attribute for any @TestCases
+syntax 
+inside class         @TestCases(dataProvider="dataProviderRefNmae")
+
+oustside class
+                     @TestCases(dataProvider = "dataProviderRefNmae",dataProviderClass=ClassName.class)
+
+or use extends and   @TestCases(dataProvider="dataProviderRefNmae")
+
+ Assert : (validation) 
+          import from org.testng  
+          Hard assert
+          Soft assert (verification)                
+Return type of Assert : boolean
+
+Hard assert 
+              it contains static methods so there is no need for objects
+              it will stop the execution if the test is failed
+              it will not continue the execution
+              AssertEquals (actual,expected) if actual and expected are equal then the test is passed
+              assertNotEquals(actual,expected) if actual and expected are not equal then the test is passed
+              assertsame(actual,expected) if actual and expected equals test passed
+              assertNull(object) if null is here it will pass
+              assertNotNull(object) if null is not here it will pass
+              asserttrue  if the condition true test passed
+              assertFalse  if the condition false test passed 
+
+
+Soft Assert
+            it contains non static methods so we need objects to access the methods.
+            it will verify the validation and record the result and continue even if validation failed.
+            by using assertAll() we can throw assertion error and terminate the test case if validation fails in soft assert
+            softAssert soft = new SoftAssert();
+            soft.assertEquals(String actual,String expected)
+
+IRetryAnalyzer (Interface)
+
+ During automation some failures may occurs which are not associated bugs in the product.
+ like browser issues , random  machine issues , server response errors.
+ for errors like this we use some methods from which we can rerun the failed test.
+
+Listeners :
+               IRetryAnalyzer
+               IAnnotationTransformer
+               (All listeners are interface) 
+
+
+IRetryAnalyzer
+ 
+steps :
+
+       create a customized return class and implement the IRetryAnalyzer listener
+       we implement the retry() from IRetyAnalyzer
+       return type of retry : boolean
+       if its false the method does not invoke again
+7       if its true the method invokes again
+       we must set the return class in our runner class as follows
+       @Test(retryAnalyzer = ClassName.class)  ----------> here the ClassName is the class name where we have retry method
+       if we want to limit the number of retry we do the following retry method class
+         outside  method
+         int start = 1;
+         int end = max number of retry; int end = 5;
+         inside method
+         if(start<end){
+             start++
+             return true ; }
+             return false
+
+IAnnotationTransformer :
+          it is a listener interface 
+          if we use IAnnotationTransformer we dont need to give @Test(retryAnalyzer = ClassName.class)
+
+steps 
+      create a customized transformer class and implement the methods from IAnnotationTrasformer
+      Note : IAnnotationTransformer (I) contains Implemented Methods
+      we override the transform(ItestAnnotaion annotation ,...........)
+      
+      inside the transform()
+      annotation.setRetryAnalyzer(ClassName.class)  ----------> here the ClassName is the class name where we have retry method
+      convert our testng runner class .java file into .xml file 
+      in xml we use listeners tag inside suite and outside the test and follow the bellow syntax .
+
+       <suite>
+           <listeners>
+              <listener classs-name = "packagename.ClassName"/>          -----------> here package and class name is the where we have  transform() method.
+           </listeners>  
+           <test>
+
+
+
+Parallel Testing
+                  By DataProvider    by  @DataPovider(Parallel = true)
+                  By xml file        while converting your runner class into xls file change parallel mode from none to methods or class or tests as you want and run
+                                     in xml file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,495 @@
+Maven :
+
+        it is a Dev-Ops tool
+        it is a build management tool
+        it is devloped by apache group
+feautres
+         can manage dependencies
+         maintain folder structure
+         build code for us
+
+    Ant   ---> Maven  ----->  Gradle
+
+steps for creating maven project
+
+          file   new    project 
+          expand maven and choose maven project and click next and again click next
+          group id : org.apache.maven.archetypes
+          artifact id : maven-archetypes-quickstart
+          Version : 1.1 or 1.4
+          click next 
+
+ Maven project folder structure 
+    
+src/main/java :
+              BaseClass
+              POM (Page Object Model)   
+              Object Manager
+              Helper file
+              
+src/test/java :
+              Runner class
+
+JRE System Libary
+                  it contains predifiend  class files
+
+Maven Dependencies
+                   here default j-unit ----> 3.8.1 jar files
+
+src --------> main and test
+ target --->
+
+pom.xml
+       pom    Project Object Model
+       xml    Xtensive Markup Language
+
+
+
+
+
+
+repositories
+            local       .m2 folder
+            cental      mvn repo
+            remote      server
+how to update pom
+     right click on pom or pom file or maven project
+them maven       update project          force update
+delete .m2 folder and save pom
+
+steps to install maven
+maven download
+binary zip archive
+move to c or d
+extract file
+maven version 3.6.3
+
+
+
+
+BaseClass
+
+        it involves  Method Overloading , static keyword , Return
+
+
+
+
+
+
+
+
+
+
+
+POM
+
+page object model / object repositary
+it is a design partten
+location  src/main/java
+here use abstraction (@findBy) and encapsulation concepts
+
+
+we collect all the webelements for each and every page and stored them in a a seprate class and make it as private
+with help of @FindBy anotation along with locaters and value
+ 
+syntax
+        @FindBy(locater="value")
+        
+         private WebElement refname;
+
+       @FindBy(locater="value")
+        
+         private List<WebElement> refname;
+
+implement pojo class and retive the getters;
+in our runner if we need the webelement we must create a object for the class and pass the parameter as driver in constructor
+at the time it will invoke the parametrized constructor in that pom class
+create a driver for POM class and in side the constuctor with help of this keyword and use it get browser property of runner classs
+with help of pagefactory class we use initelements method to initialize the the webelements 
+
+           pageFactory.initElements(driver,this)
+
+
+Page Object Manager:
+
+           in page object manager we manage each and every POM class objects 
+           here we use half POM and half singleton pattern
+
+location 
+         src/main/java
+
+step 1 :
+
+ declare the pom class objects as private
+
+          private ClassName objRefName;
+            
+step 2 : 
+
+ implement the POJO and generate getters and setters for the POM class objects snd custoize the getters
+
+step 3 :
+
+ inside the customized getters invoke the constructor and stored in the object refername.
+
+step 4 :
+  
+ create an instance for Webdriver 
+
+step 5 :
+ if we need a webelement from POM class
+crete a object for PageObjectManager and call the particular POM class getters and Invoke WebElement
+POMobject.gethome.getelement();
+
+step 6 :
+ 
+ pass the parameter as driver in page object manager constructor
+and it will invoke parametrized  constructor  in projectobjectmanager
+
+step 7 :
+ in pom use this.driver to assign runner class driver in pom
+
+step 8 :
+        once we execute our program and its works fine
+        but it will invoke the constructor for each and evrey time we call the pom object 
+so we use following condition to reduce memory consuption by avoiding inovoking the constructor
+
+if(obj == null){
+ 
+ obj = new constuctor(driver)
+
+}
+
+
+
+LOGGER:
+
+        it will write the log messages insted of SOP statements
+
+Dependencies:
+             Apache log4j  1.2.17
+
+Log4j components 
+                Root Logger / Logger
+                Appender
+                Layout
+
+Root Logger / Logger
+                       debug, info, warn, error, fatal
+
+
+ Appender
+           purpose : writes log messages in file , console or Data Base
+
+           Files Appender ---> writes in file
+           Console  Appender ---> writes in console
+           JDBC  Appender ---> writes in DB
+ 
+Layout
+        pattern layout
+        simple layout
+        XML layout
+        HTML layout
+
+
+
+Factory Design Pattern : 
+
+                        without invoking the constructor we will create a instance for class with help of class inbuilt hethods
+
+configuration :
+
+                Basic configuration
+                property configuration
+
+Basic configuration
+                     BasicConfigurator.configure();
+
+Property configuration :
+                       log4j.properties
+                       # ---> hide the line
+                       key = value pair 
+                       key and value will always consider as string
+                       we are using HashTable concept
+        
+                
+ 
+
+Frame Work 
+             Data Driven Framework
+             TDD (Test Driven Devlopement ) 
+             BDD  (Behavioural Driven Devlopement  )
+             J-Unit
+
+Keyword driven
+
+Hybrid Frame work
+
+Test Data Management :
+     
+                         In excel               (.xlsx or .xls)  -----> Data Driven Framework
+                         In properties          (.properties)    -----> Singleton Design Partten
+
+Test Data : 
+           Username, password, phone number, adrress, cvv, credit card type, accout number
+
+Data Driven Framework
+
+                       it is a Framework.
+                       it will help us to read data write data in excel.
+                       with the help of Apache POI dependencies we will perform some actions in excel. 
+
+Apache POI :
+             POI ---> poor Obfuscation Implementation in an API it will have java Dependencies
+             
+             to 
+               read and write in excel 
+
+ Dependencies 
+             Apache POI
+                         poi 
+                         poi-ooxml
+                         poi-oooxml-schemas
+ all three must be same version
+
+workflow
+
+          Excel 
+                  Workbook
+                           HSSFWorkbook
+                           XSSFWorkbook
+                                        Sheet
+                                               Row
+                                                   Cell
+                                                       CellType (enum)
+ Workbook
+                       It is an Interface
+                       it contains multiple spreadsheets   
+Types
+           HSSFWorkbook (class) 
+           XSSFWorkbook (class)
+HSSF Workbook :
+                It is a class
+                it supports MS-Excel Versions before and 2003
+                it supports only .xls format
+                HSSF -> Horrible Spread Sheet Format
+XSSF Workbook
+                It is a class
+                it supports MS-Excel Versions ater and 2007
+                it supports only .xls or .xlsx format
+                XSSF -> Xml Spread Sheet Format
+syntax
+       Workbook refname = new XSSFWorkbook();  ---> upcasting
+ without upcasting
+       XSSFWorkbook refname = new XSSFWorkbook();
+
+Sheet (Interface)
+                    it is an interface 
+                    it contains multiple rows and cells
+For
+    createSheat  --->  createSheat ();
+
+for  retrive sheet 
+                   getSheetAt(index);   index based               
+                   getSheet(name);      name based
+Row (Interface)
+
+             it contains multiple cells
+for create Row    createRow();
+
+for retrive row 
+            getRow(index) ---> retrive row based on index
+to retrive Physical number of rows 
+            getPhysicalNumberOfRows() ---> it will retrive phsical number of rows as length to get index (length - 1)
+
+Cell (Interface)
+             
+          it contains like String, int, flot and date.
+for create cell --> createcell()
+to retrive cell  --> getCell(index) --> retrive cell basaed on index
+to retrive Physical number of cells -->  getPhysicalNumberOfCells() ---> it will retrive phsical number of Cells as length to get index (length - 1)
+to check the data type of cell data --> getCellType(); it will check the cell type
+
+if it is string 
+                we use getStringCellValue()
+                return type String
+if it is numeric 
+                we use getNumericCellValue()
+                return type double
+
+read  
+        to read the data from the excel 
+        
+        Particular Cell
+        Particular Row
+        Particular column
+        All Cell
+step 1 :
+        convert.xlsx into File
+        create a object for file and pass the parameter as .xlsx location in constructor
+        File file = new File(location of .xlsx)
+
+step 2 : 
+          to read the data from excel
+          create a object for file input stream and pass the file refName in constructor
+      FileInputstream fis = new FileInputstream(file);   it will throw FileNotfound Exception at compile time handeled by throws
+      
+step 3 :
+         create a object for Workbook with HSSFWorkbook or XSSFWorkbook based on suitablity  and pass FileInputstream  refname in constructor
+          Workbook w = new  XSSFWorkbook(); 
+         Workbook w = new  XSSFWorkbook(fis);           it will throw IOException at compile time handeled by throws
+
+step 4 : 
+         connect with sheet by using workbook refName
+                                                     w.getSheetAt(index)
+                                                                               return type Sheet  ---> Sheet sheetAt =  w.getSheetAt(index)
+                                                     w.getSheet(name)             
+
+                     
+step 5 :  connect with row sheet retured by the getSheet or getSheetAt
+                                                           sheetAt.getRow(index);        return type --->  Row row =   sheetAt.getRow(index);
+
+step 6 : 
+         we will retrive cell with the refname of the returned row
+             row.getCell(index);   -----> Cell cell =  row.getCell(2);
+                                                         
+step 7 :
+         we will check cell type with the cell refname returned
+         cell.getCelltype();    -----> CellType cellType =  cell.getCelltype();
+
+step 8 :
+         after we get cell type we use if and else if conditions to determine whether we use getStringCellValue() or  getDoubleCellValue() as follows
+
+			 if (cellType.equals(CellType.STRING)) {
+					String data = cell.getStringCellValue();
+				}
+				else if (cellType.equals(CellType.NUMERIC)) {
+					double data = cell.getNumericCellValue();
+					   int x = (int) data;
+                               } 
+
+
+       All Data
+step 1 :
+        convert.xlsx into File
+        create a object for file and pass the parameter as .xlsx location in constructor
+        File file = new File(location of .xlsx)
+
+step 2 : 
+          to read the data from excel
+          create a object for file input stream and pass the file refName in constructor
+      FileInputstream fis = new FileInputstream(file);   it will throw FileNotfound Exception at compile time
+      
+step 3 :
+         create a object for Workbook with HSSFWorkbook or XSSFWorkbook based on suitablity and pass FileInputstream  refname in constructor
+         Workbook w = new  XSSFWorkbook(fis); i           it will throw IOException at compile time
+
+step 4 : 
+         connect with sheet by using workbook refName
+                                                     w.getSheetAt(index)
+                                                                               return type Sheet  ---> Sheet sheetAt =  w.getSheetAt(index)
+                                                     w.getSheet(name)             
+
+step 5 :
+          connect with all row
+          retrive the count of physical number of rows by  sheetAt.getPhysicalNumberOfRows();
+          int rows = sheetAt.getPhysicalNumberOfRows();
+ we have to traverse into every row so we use looping and with condition as  physical number of rows so we can traverse into every pysical row with iteration
+ inside the loop we retrive every row as follows by using getRow(index) with returend sheetAt -----> Row row = getRow(i);
+ now we have to traverse into every cell so we need an another loop and we have condition for that loop as  physical number of cells so we can traverse into every cell of particular row with iteration
+ inside the loop we retrive everycells of paticular row as  by using getCell(index) with returend  row ----->	Cell cell = row.getCell(j)	
+ we will check cell type with the cell refname returned
+         cell.getCelltype();    -----> CellType type =  cell.getCelltype();
+         after we get cell type we use if and else if conditions to determine whether we use getStringCellValue() or  getDoubleCellValue() as follows
+
+			 if (cellType.equals(CellType.STRING)) {
+					String data = cell.getStringCellValue();
+				}
+				else if (cellType.equals(CellType.NUMERIC)) {
+					double data = cell.getNumericCellValue();
+					   int x = (int) data;
+                               } 
+
+
+
+
+	int rows = sheetAt.getPhysicalNumberOfRows();
+	for (int i = 0; i <rows; i++) {
+		Row row = sheetAt.getRow(i);
+		int cells = row.getPhysicalNumberOfCells();
+		for (int j = 0; j <cells; j++) {
+			Cell cell = row.getCell(j);
+			 CellType type = cell.getCellType();
+			 if (type.equals(CellType.STRING)) {
+					String data = cell.getStringCellValue();
+					 System.out.print(data+" ");
+				}
+				else if (type.equals(CellType.NUMERIC)) {
+					double data = cell.getNumericCellValue();
+					   int x = (int) data;
+					 System.out.print(x+" ");
+		}
+			
+	} 
+		System.out.println();
+
+
+step 6   close the workbook by Woorkbook refname   w.close();
+
+
+Write : 
+       To write the data into the excel / flow of data into the excel
+condition :
+            Excel path must be orginal excel file location
+            Excel must be colosed during write action
+
+step 1 :
+        convert.xlsx into File
+        create a object for file and pass the parameter as .xlsx location in constructor
+        File file = new File(location of .xlsx)
+
+step 2 : 
+          to read the data from excel
+          create a object for file input stream and pass the file refName in constructor
+      FileInputstream fis = new FileInputstream(file);   it will throw FileNotfound Exception at compile time
+      
+step 3 :
+         create a object for Workbook with HSSFWorkbook or XSSFWorkbook based on suitablity and pass FileInputstream  refname in constructor
+         Workbook w = new  XSSFWorkbook(fis); i           it will throw IOException at compile time
+   
+steep 4  : create a sheet
+           create a sheet with help of workbook refname and createsheet
+           w.createSheet(sheetName);   returns   ----> Sheet createSheet = w.createSheet(sheetName);
+we have two ways to write 
+first way
+Sheet createSheet = w.createSheet(sheetName);
+Row row = createsheet.createRow(index);
+Cell cell = cell.createCell(index);
+cell.setCellValue(data);
+
+Second way 
+
+Sheet createSheet = w.createSheet(name);
+ createSheet.createRow(index).createCell(index).setCellValue(data);
+
+Step 5 :
+         create a object for file output stream and pass the file 
+         FileOutputStream fos = new FileOutputStream(f);     
+
+step 6 :
+         by using woorkbook refence name and the help write() method and passing the file output stream refname.
+         w.write(fos);
+
+step 7 : 
+         close the workbook
+    w.close();
+
+
+
+
+
+
+
+
+
+      

@@ -1,0 +1,20 @@
+running a maven project without going to runner class
+
+using maven compiler plugin      ----> compile the jdk
+along with maven surefile plugin ----> run and config our runner class
+
+we use maven goals 
+                    install ----> need maven compiler plugin and maven surefile plugin
+                    clean   ----> need maven clear plugin
+
+By cmd
+         change the directory to our workspace
+         mvm clean intall command
+
+By Bat File
+             open an notepad and
+                   cd directory
+                   mvn clean install
+          save the file in .bat format
+          .bat location : our workspace
+           open the file

@@ -1,0 +1,103 @@
+
+   Background:
+__________________
+                          It is an Precondition.
+                          Background Keyword is used to repeat an same set of actions before all scenario .
+                          We give Background:  keyword in feature file followed by Given, When, And and Then with test steps just like scenario.
+                          But we can only have one Background in the feature file.
+                       
+    Example :
+ 
+            Background: User Launches Adactin Application And Login To Adactin Account
+            
+            Given user Launches Adactin Application
+            When  user Enters The UserId
+            And   user Enters The Password
+            Then  user clicks On Login Button And It Navigates to "Adactin - Search Hotel" Page
+                 
+            @London
+            Scenario: Booking Hotel Sunshine In London
+         
+            When user Selects Hotel Sunshine In London
+            And  user Books The Hotel Sunshine In London
+            Then user Logout The Adactin Account And It Navigates to "Adactin - Hotel Reservation System" Page
+
+            @Paris
+            Scenario: Booking Hotel Creek In Paris
+         
+            When user Selects Hotel Creek In Paris
+            And  user Books The Hotel Creek In Paris
+            Then user Logout The Adactin Account And It Navigates to "Adactin - Hotel Reservation System" Page
+
+    	If we use the above feature file and its step def in runner class and run it as jUnit Test we will get following result
+
+ @London
+            Scenario: Booking Hotel Sunshine In London
+            Given user Launches Adactin Application
+            When  user Enters The UserId
+            And   user Enters The Password
+            Then  user clicks On Login Button And It Navigates to "Adactin - Search Hotel" Page
+            When user Selects Hotel Sunshine In London
+            And  user Books The Hotel Sunshine In London
+            Then user Logout The Adactin Account And It Navigates to "Adactin - Hotel Reservation System" Page
+
+ @Paris
+            Scenario: Booking Hotel Creek In Paris
+            Given user Launches Adactin Application
+            When  user Enters The UserId
+            And   user Enters The Password
+            Then  user clicks On Login Button And It Navigates to "Adactin - Search Hotel" Page
+            When user Selects Hotel Creek In Paris
+            And  user Books The Hotel Creek In Paris
+            Then user Logout The Adactin Account And It Navigates to "Adactin - Hotel Reservation System" Page
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+  Hooks :
+_____________
+             
+              beforeHooks()  ---->  
+                                  @Before     -----> Executed before all Scenarios
+                                  @BeforeStep -----> Executed before all Steps
+              afterHooks()   ----> 
+                                 @After       -----> Executed After all Scenarios 
+                                 @AterStep    -----> Executed After all Steps
+
+              It is both Pre-condition and Post-Condition
+              With Hooks we can execute certain set of actions before or after all scenarios or particular scenarios using @Before or @After Hook respectively
+              With Hook we can also execute certain set of actions before or after all steps in a scenario With @BeforeStep or @AfterStep Hook respectively
+              We do not mention Hooks in feature file
+              Hook methods has to be in step definition class or can be in separate class.
+              if we have our hooks in separate class we have mention the hooks class in glue along with stepdef calss in runner class
+              if we a have specific hook more than one time in our stepdef then that specific hook will be executed in ASCII order
+              for example if we have three @Before hook in our stepdef then each @Before hook will get executed in ASCII order
+Attributes
+             Order
+                Before Hook
+                   @Before(Order = int )
+                   @BeforeStep(Order = int )
+                   will be Executed in Ascending order   ( Lower to Higher )   
+                After Hook
+                   @After(Order = int )
+                   @AfterStep(Order = int )
+                   will be Executed in decending order  ( Higher  to Lower )             
+
+             Value 
+                     @Before(Value = "@TagName" )      ------>  Hook will be executed only before the scenarios with the given @TagName
+                     @BeforeStep(Value = "@TagName" )  ------>  Hook will be executed before the all the steps in scenario with the given @TagName
+                     @After(Value = "@TagName" )       ------>  Hook will be executed only After the scenarios with the given @TagName
+                     @AfterStep(Value = "@TagName"  )  ------>  Hook will be executed After the all the steps in scenario with the given @TagName
+                     
+
+Background Vs Hooks  
+----> Background is an Precondition but Hooks is both Pre-condition and Post-Condition
+----> If we have more than one feature file and want to perform same set of actions with Background for all the scenarios in all the feature files we have to write 
+      the same Background in all feature files, but hooks does not nead that because we do not specify the hooks in feature file at all.
+----> Background will run Before all the Scenarios in the feature file  but in Hooks we can use value attribute to run a hook before or after any particular scenario
+----> Background is preferred when we need to provide client readable pre-condition to the scenarios and hooks is preferred for technical setup which are not needed
+      to be readable by client .      
+
+           
+             
+                                                  

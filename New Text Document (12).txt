@@ -1,0 +1,107 @@
+What If -----> An Developer doesn't acknowledge defect found by the Tester as a BUG
+
+
+                    As An Tester we can convince our Developer about the severity and priority of the defect as follows
+
+---> If the Developer doesn't acknowledge the defect found by us as an Bug, as tester we must have to RETEST the scenario and we have to test the scenario from 
+     different ENVIRONMENT and we have to make sure our defect is reproducible with our test steps and record the occurrence of the defect as proof.
+---> Then try to convince your developer about the severity and priority of the defect that you found.
+---> If your Developer don't accept the defect use screen play-back records such as QARepaly to record the test results and show them to the Developer and try to 
+     put them in testers point and make them to accept it as a bug.
+---> Even though the Developer doesn't accept it because of the difference in point of view of you and your Developer on the defect you can also seek help of other 
+     Developers to explain the defect to your Developer.
+---> If the Developer doesn't change his mind at all the take the defect to test lead even test lead doesn't take it seriously or not accepting it you can escalate
+     the issue  take it to test manager even they don't accept it you can make the final call with product owner or Business Analyst who closely interact with 
+     client if they telling it is not a problem you can write a B.A comment in JIRA / Test Case and close it or if they accept it as bug then you can send a 
+     mail regarding the Bug to the Developer , Test Lead , Test Manager and inform why it is a Bug.
+
+Note :  Sometimes we testers are right sometimes our Developers may right. The bottom line is not to win a game over Developer. Keep good relationship with Developers
+        it must have to be win-win relat
+]'[pihd   onship. 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+java programs :
+                 Rverse String
+                 Repetative word / no.of occurence
+                 Ascending order / descending order in array without using sorting
+
+
+
+public static void main (String[]args){
+int [] a = {4,5,3,27,6,7,1};
+int swap = 0;
+for (int i=0 ;i<a.length;i++){
+for (int j=i+1; j<a.length;j++){ 
+if (a[i]<a[j]){
+    swap=a[i] ;
+    a[i] = a[j];
+    a[j] = swap;}}}
+for (int arr :a){
+system.out.println(arr);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

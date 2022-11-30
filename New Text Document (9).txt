@@ -1,0 +1,17 @@
+Repetative word
+
+        public static void main(String[] args){
+	String s = "The the The He the Him Him He the";
+	String[] split = s.split(" ");
+	Map<String, Integer> m = new LinkedHashmap<String, Integer>();
+        for (String s : split) {
+	if (m.containsKey(st)) {
+	m.put(s, m.get(st)+1);}
+	else {
+	m.put(s, 1);}
+        }
+       Set<Entry<String, Integer>> entrySet = m.entrySet();
+       for (Entry<String, Integer> entry : entrySet) {
+       if (entry.getvalue()>1) {
+       System.out.println(entry);}
+       }

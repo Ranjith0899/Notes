@@ -1,0 +1,39 @@
+               int num = 543;
+               int revNum = 0;
+               int rem = 0;
+         for(num>0){
+                   rem = num%10;
+                   revNum = (revNum*10)+rem;
+                   num = num/10;
+                     
+                   }
+           System.Out.Println(revNum)
+
+
+loop begins
+           condition
+           num>0  num=543    true
+           implementation part
+           rem = 543%10; -------> 3
+           revNum= (0*10)+3  ---> 3
+           num = 543/10  -------> 54
+
+           condition
+           num>0  num=54     true
+           implementation part
+           rem = 54%10; -------> 4
+           revNum= (3*10)+4 ---> 34
+           num = 54/10  -------> 5
+
+           condition
+           num>0  num=5      true
+           implementation part
+           rem = 5%10;  -------> 5 
+           revNum= (34*10)+5 ---> 345
+           num = 5/10 -------> 0           
+
+           condition
+           num>0  num=0      false
+loop ends
+
+

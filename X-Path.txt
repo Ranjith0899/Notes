@@ -1,0 +1,38 @@
+//input[@id='email']                    rr2897352@gmail.com
+//input[@id='pass']                     1223334444
+//button[@name='login']
+//div[@id ='block_top_menu']/ul/li/ul/li/a[@title='Summer Dresses']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,850 @@
+SELENIUM :  (Task : selenium vs apm)
+
+
+         It is a automation testing tool.
+         It depends upon programing languages like c, c++, Java, Python and so on
+         With selenium we can interact with web application only.
+         It is an open source tool.
+         Before selenium we used : qtp and Mercury        (Task  before and after selenium alternatives)
+         In web application we mostly involved in functional testing, UI Automation Testing.
+
+Limitations:
+
+             It automates only web application and not mobile application.
+             we cant read cpatcha and submit otp 
+             sometimes the elements in the methods not work in some elements.
+             we cant perform scrollup and scrolldown operation but with help of javascript executor interface we perform that actions.
+             (task Other limitation)
+             we cant genrate reports 
+
+Selenium components or suites :
+
+          Selenium IDE
+          Selenium RC          (Remote Control)
+          Selenium Webdriver
+          Selenium Grid
+
+
+Selenium IDE :
+
+              It will work in firefox only.
+              It will automate the test scripts at the time it will record the test automation.
+
+Selenium RC  :
+ 
+              It will not directly interact with our browser.
+              Selenium IDE-----> Selenium RC -----> WebBrowser
+              In RC Installisation are complicated.
+
+Selenium WebDriver :
+
+              It directly interact with our browser.
+              it supports diffrent programing languages and diffrent browsers
+     Jar name :
+              Selenium-Server-Standalone
+                  version : 3.141.59
+(Task selenium 3 vs 4)
+
+Selenium Grid :
+
+             It supports Multi-Threading.
+             It will execute multiple test cases at a same time With the help of HupNode concept and it reduces execution time.
+
+
+How to add selenium jar in our projet :
+               right click on your project
+               build path 
+               config build path
+               choose libaries
+               Add external jar
+               selenium jar
+Browser Name : 
+                   class name            key                          value (.exe file )
+Chrome             ChromeDriver          webdriver.chrome.driver      chromedriver.exe
+Edge               EdgeDriver            webdriver.edge.driver        edgedriver.exe
+FireFox            FireFoxDriver         webdriver.gecko.driver       gekco.exe
+Browser Launch :
+
+               System.SetProperty(Key String,Value String)  -----> HashMap used here
+                                 | 
+                                 |
+                                \_/
+               System.setProperty("webdriver.chrome.driver","C:\\Users\\ELCOT\\eclipse-workspace\\Selenium\\Driver\\chromedriver.exe" );
+
+               WebDriver driver = new ChromeDriver(); 
+------------------------------------------------------------------------------------------------------------------------------
+if we used wrong .exe file it will throw sesionNotCreatedException in runtime
+In selenium 3 JSON wire protocall (JavaScript Object Notation)
+if we use selenium 4 w3c protocol (world wide web consortium)
+       it will check browser version and .exe version are same 
+            if both version match the session will created
+            if both version dont match  it will throw sesionNotCreatedException in runtime
+--------------------------------------------------------------------------------------------------------------------------------
+
+WebDriver Methods :
+
+method                              function                                              return type
+
+get(string url)                 to navigate to the required url                           void            if we give wrong url it will throw illegalArgumentException in runtime
+
+getTitle()                      it will return the title of the current web page          String              
+getCurrentUrl()                 it will url of the current web page                       String
+switchTo()                      it will switch driver position from current  
+                                to Alert  ---> switchTo().alert()
+                                to frame  ---> switchTo().frame()
+                                to window ---> switchTo().window()
+close()                         it will close the current window                           void
+quit()                          it will terminate the entire browser session               void
+getPageSource()                 it will return the page source                             string
+
+navigation
+
+navigate().to(String)           it will navigate to the given url                          void
+navigate().back()               it will navigate backward                                  void
+navigate().forward()            it will navigate forward                                   void
+navigate().refresh()            it will refresh current web page                           void
+
+manage ---> with manage command we can manage cookies, window, timeouts, logs.                             (task cookies vs cahche)
+
+manage().window().maximize()           it will maximize the window size                     void             
+manage().window().fullScreen()         it will maximize the window to full screen           void
+manage().window().getSize()            it will return the dimension of the web page         Dimension
+manage().window().setSize(Dimension)   it will set the given size to the window             void
+manage().deleteAllCookies()            it will delete all cookies                           void  
+manage().timeOut()
+
+
+
+FindElement 
+                     it will find the single WebElement
+                     it's return type is WebElement                        
+                     if the driver cant find the WebElement it will throw no such element exception at run time
+FindElements 
+                     it will find  more than one WebElement
+                     it's return type is List<WebElement>                        
+                     if the driver cant find the WebElements it will return empty List at run time                     
+
+getWindowHandle()
+
+
+
+getWindowHandles()
+
+
+(get vs navigate ---> get will wait until the web page load completly and get dont store web history (vs) navigator will not wait until the web page load completly and navigate store web history)
+
+
+
+
+Web Element :
+               All the elements present in the webpage is called as webelement.
+               and it does not present in DOM (Document Object Model)
+
+DOM  :
+         Created by dev
+         its starts with html
+structure of DOM
+         <html>
+         <head>      </head>
+         <body
+         <tagname  attributename="attribute value"></tagname>
+         ></boody>
+         </html>
+
+tagname          pink colur
+attribute name   orenge
+attribute value  blue
+text             black
+with help of findElement() we can interact with one element
+with help of findElements() we can interact with more element 
+
+we use locaters to identify the elements
+
+locaters are present in by (abstsrct class) 
+
+
+types
+     id
+     name
+     class
+     xpath
+     css selector / locator
+     tag name
+     link text
+     patiallink text
+
+WebElement methods
+ 
+
+click()                          it will click an webelement                                 void 
+sendKeys()                       it will send data to the particular text box                void
+
+
+
+
+
+
+                                                SerchContext
+
+     WebDriver (I)                           JavaScriptExecutor (I)                             TakeScreenshot (I)
+
+                                       RemoteDriver (class) / chromium (class)
+
+                            ChromeDriver           EdgeBrowser              FireFoxDriver
+
+
+
+  public class RemoteDriver implements WebDriver , JavaScriptExcecutor , TakeScreenshort ()
+  public class ChromeDriver extends RemoteWebDriver{}
+  If we invoke constructor like  --->  ChromeDriver driver = new ChromeDriver() 
+  we can access WebDriver , JavaScriptExcecutor , TakeScreenshort because (ChromeDriver extends RemoteDriver) and (RemoteDriver implements WebDriver , JavaScriptExcecutor , TakeScreenshort )
+  If we invoke constructor like  --->  WebDriver driver = new ChromeDriver()
+  We can only access WebDriver methods only. because WebDriver doesnt extends RemoteDrive so we cant access  JavaScriptExcecutor , TakeScreenshort  without downcasting.
+
+TakesScreenshot tkss = (TakesScreenshot)driver;           ------> downcasting used
+File source = tkss.getScreenshotAs(OutputType.FILE);
+File destination = new File("path\\name.format");
+FileUtils.copyFile(source, destination);
+
+
+X-Path :
+
+ it is one of the locator.
+
+
+Types :
+
+       Absolute X-Path
+       Relative X-Path
+
+Relative X-Path :
+
+                it start with double forward slash (//)
+                it start from the middle of the DOM or
+
+Syntax :
+
+1. Attribute value and Attribute Name present
+   //tagname[@attributeName='attributeValue']
+
+2. Attribute value and Attribute Name not present
+   //tagname[text()='text']
+
+3.Attribute value and Attribute Name not present and here text is also long
+   //tagname[contains(text(),'patial text')]
+
+4. Attribute value and Attribute Name present but attribute value is long 
+   //tagname[contains(@attributeName,'partial attributeValue')]
+
+5. if an webpage have multiple web elements we can pass index to get the target web element, its applicable for all the scenarions
+   //tagname[@attributeName='attributeValue'][index]
+   //tagname[text()='text'][index]
+   //tagname[contains(text(),'patial text')][index]
+   //tagname[contains(@attributeName,'partial attributeValue')][index]
+   
+
+
+WebElement Architecture 
+                                 Search Context
+                                TakesScreenshort
+                                   WebElement
+
+
+WebElement methods 
+
+isDisplsyed()                     it will check the webelement is present in ui or not                      boolean
+isEnabled()                       it will check the webelement is enabled or not                            boolean
+isSelected()                      it will check the webelement is selected or not                           boolean
+getAttribute("attribute name")    it will return attribute value of the given attribute name                String            
+
+all the data we send  with refName(WebElement).sendKeys(); into a tag are stored in the attribute name value in that tag itself
+if we whant to get the data we send we can do refName(WebElement).getAttribute(value)
+
+
+
+
+
+
+Dropdown
+
+it represents a HTML element
+it provide multiple access users
+
+types
+single  dropdown
+multiple dropdown
+ 
+
+
+
+
+depands on DOM Structure
+                            HTML Dropdown  ---> tag name must be select
+                            Bootsstarp dropdown ----> tagName will be any but not in select.
+ HTML dropdown
+               <select id = "dropdown" name=""type"">
+                  <option value = "1">1</option>
+                  <option value = "2">2</option>
+               </select>    
+syntax : 
+            
+              Select s = new select(WebElement);
+Select Class parent   -----> ISlect
+
+structure
+        public class select implement ISelect
+
+
+
+
+
+Methods                                             Descricription                                                               return type 
+
+isMultiple()                              it checks the dropdown is single or multiple if multiple it return true               boolean
+                                          if single it return false
+
+getOptions()                              it will return all the options present in our element                                List<WebElement>
+getFirstSelected()                        it will return the selected element in single dropdown                               WebElement
+                                          in multiple dropdown it will return first selected option                           
+below methods only works in multiple dropdown
+selectByIndex(int)                        it will select the option depends upon given index                                   void
+selectByValue(string)                     it will select the option depends upon given value                                   void 
+selectByVisibleText(string)               it will select the option depends upon given text                                    void
+deSelectByIndex(int)                      it will deselect the option depends upon given index                                 void
+deSelectByValue(string)                   it will deselect the option depends upon given value                                 void 
+deSelectByVisibleText(string)             it will deselect the option depends upon given text                                  void
+deSelectAll()                             it will deselect all the options                                                     void
+getAllSelectOptions()                     it will return all the selected options                                              List<WebElement>
+
+
+
+
+Aleart :
+
+        it is an interface.
+        it is present in between the current browser and UI 
+        alerts are mostly invoke in E-commerce , booking and banking application
+        alert is not present in html
+        alert is non inspect
+
+alert will invoke depends on  some unexcepted events and some excepted events like permissions
+
+types:
+         OS Alert
+                   window based popup like .apk files and convert local system files into another formet in web
+                   we handle the os alert by a third party tool like autoit or robot class from jre libary
+         Application/web/browse alert 
+                   Javascript alert
+                   authentication based popup
+                   permission based popup
+JavaScript Alert
+                    if we want handle javascrit alert we must switch driver position form our webpage to alert
+                    driver.switchTo.alert();
+Types
+                    simple alert
+                    confirm alert / confermation alert
+                    prompt alert
+                    sweet alert / morden alert 
+
+Alert internal Structure :
+
+public interface alert
+{
+     void accept();
+     void dismiss();
+     StringGetText();
+     void sendKeys(string refname);
+
+}
+
+
+
+Alert methods 
+ 
+Methods                                            Description                                 return Type
+ 
+accept()                                        it will accept the alert                          void
+dismiss()                                       it will dismiss alert                             void
+getText()                                       it will the text from alert                       String 
+sendKeys(String)                                it is used to send text to alert
+                                                mostly used in proemt alert                       void            
+
+ 
+if there is no alert and we switch().alert() it will throw NoAlertPresentException in run time
+
+simple alert 
+
+it displayes an single button with  alert text
+you can use both dismiss and accept to accept the alert
+
+
+confirm alert
+
+it displays two buttons along with alert text
+we can use accept to accept the alert
+we can use dismiss to dismiss the alert
+
+prompt alert
+
+it displays an text box and two buttons along with alert text.
+we can use accept to accept the alert
+we can use dismiss to dismiss the alert
+we can send text with sendKey();
+
+Morden / sweet alert
+
+we can inspect this alert
+the accept and dismiss future belong to html so we can perform easily with the WebElement method click();
+----------------------------------------------------------------------------------------------------------------
+
+Authentication based popup
+
+we pass the credentials through url and handle the authentication based popup
+
+
+syntax
+
+driver.get("https://username:password@url)
+
+permission based alert
+
+it is invoked by our browser
+we can handle the permission based popup by using desiredcapablities or chrome  options
+
+desired capabilities :
+
+it is a class
+it is used to modify multiple properties of webdriver.
+
+
+syntax
+
+DesiredCapabilities refname = DesiredCapabilities.chrome or edge or firefox
+
+ChromeOptions
+
+is a class
+it will customized by browser session and modify multiple properties of chrome driver
+like open incontigenic mode and handle permission based popup
+
+
+syntax
+
+ChromeOptions options =  new ChromeOptions();     options in here is refname
+ options.addArguments("");
+
+WebDriver refname = new ChromeDriver(options)
+
+to disable notification permissions
+options.addArguments("disable-notifications")
+options.addArguments("incognito")
+
+Frame
+
+Frame contains a seprate html structure inside an html of webpage
+
+tagName : Frame / iframe
+
+How we handle frame
+
+       driver.switchTo().frame()
+
+by index
+
+       driver.switchTo().frame(int index)
+
+by Id / name 
+
+       driver.switchTo().frame(String id)
+
+       driver.switchTo().frame(String name)
+
+by Webelement 
+
+       driver.switchTo().frame(Webelement element)
+
+
+
+driver.switchTo().defaultContent();
+                                 it will switch to the WebPage HTML from any frame HTML  you are in.
+
+
+driver.switchTo().parentFrame();
+                                 it will switch to the parent frame from child frame  you are in.
+
+
+X-Path :
+
+      Xml path is a querry language.
+      we can easily traverse into every roots / nodes in both direction like forward and backword.
+
+Types 
+    
+     Absolute X-Path
+     Relative X-Path
+
+Absolute X-Path :
+                 it starts from root tag or html
+                 we follow single forward slash /
+
+html structure 
+ head 
+ body
+  <>
+  <></>
+xpath function
+
+ text() or//tagname [.='text']
+ contains()
+ stats-with()
+ normalize-space()
+
+xpath operaters
+ 
+>  ------> greater
+<  ------> smaller
+=  ------> equal
+=! ------> not equal
+
+Logical operator
+
+And       
+          both of the attributeName and attributeValue must be present
+         //tagname[@attributeName='attributeValue'and attributeName='attributeValue']
+
+Or
+          atleast one set of the attributeName and attributeValue must be present
+         //tagname[@attributeName='attributeValue'or attributeName='attributeValue']
+
+ 
+
+Dynamic X-path / customized x-path
+
+                  with help of relationship axes we will customize our xpath
+syntax 
+           CurrentElement x-path//relationship::tagname
+           CurrentElement x-path//relationship::TargetElement x-path
+Axes :
+        relationship between our current element and target element
+
+Relationship axes :
+
+               preceding                                              following
+                parent                                                  child
+           preceding-sibling                                       following-sibling
+               ancestor(include parent)                               descendant (include self)
+               / rep child
+               /.. rep parent
+
+
+Actions
+
+        it is a class
+        it will perform mouse and keybord functions
+
+syntax
+
+
+       Actions a = new Actions (WebDriver-refname)
+
+
+mouse actions 
+ 
+ click()------> it will perform click action in current element location
+ click(WebElement)------> it will perform click action in target webelement
+ contextClick()------> it will perform right click action in current element location
+ contextClick(webelement)------> it will perform right click action in target webelement
+ doubleClick()------> it will perform double click action in current element location
+ doubleClick(webelement)
+ clickAndHold()-----> it will click and hold the mouse in in current element location
+ clickAndHold(webelement)
+ dragAndDrop(source,target)----> it will drag an webelement from source to  target
+ release()
+ moveToElement()-----> it will move the driver position to particular webelement  in same HTML
+
+keyboard actions
+
+
+
+
+
+WebTable
+
+        a table present in web page is webtable
+        TagName table
+structure 
+
+<table>
+       <thead>
+              <tr>  
+              <th> or <td>
+              </th> or </td>
+              </tr>
+       </thead>
+       <tbody>
+              <tr>
+              <td>
+              </tr>
+              </td>
+       </tbody>
+</table>                               
+
+
+types
+     static webtable
+     dynamic webtable
+
+
+Data :
+      all data or table entire data
+      particular or single row data
+      particular or single coloum data  
+      particular data
+      headers    
+
+Data                               Method                      xpath                              returntype
+
+particular data                 findElement();            table/tbody/tr[index]/td[index]         WebElement   use getText(); to get that data
+
+particular row data             findElements();           table/tbody/tr[index]/td                list <WebElement>   use iterator and geText(); to get that data
+
+particular coloum data          findElements();           table/tbody/tr/td[index]                list <WebElement>   use iterator and geText(); to get that data
+
+all table data                  findElements();           table/tbody/tr                          list <WebElement>   use iterator and geText(); to get that data
+
+
+
+Keyboard actions
+
+   keysUp
+
+   keysDown
+
+   sendKeys
+ keys --- enum
+
+
+
+
+
+
+
+
+
+
+waits / Synchronization :
+
+      static wait
+      dynamic wait
+
+static wait  
+           Thread.Sleep(milli sec );
+           Thows interaputted exception at compile time
+           it will make the thread sleep until the given time without responding with whether the required element is available or not
+Dynamic wait :
+              implictWait ---> manage().timeOuts()
+              ExplicitWait ---> WebDriverWait(class)
+              pageLoadTimeOuts  ---> manage().timeOuts()
+              FluentWait -----> wait (Interface)
+              
+Implicit Wait :
+                default = 0 sec
+                it will until the target element showsup for the given time.
+                if the web element is found before the given time it will skip remaing time
+                if driver dont find the element within the given time then it will throw NoSuchElement Exception at run time
+                it is applicable for all the WebElement
+                implicits wait  work in findElements(); and FindElement();.
+                
+      syntax
+               driver.manage().timeOuts.ImplicitlyWaits(10,TimeUnits.SECONDS)
+
+
+
+if we give more than one implicitly wait it will override
+
+Explicit Wait :
+                 it is applicable for single WebElement and it depens on the conitions.
+                 if the web element is found before the given time it will skip remaing time
+                 if driver dont find the element within the given time then it will mostly throw ElementNotInteractable, TimeOutException or NoSuchElement Exception at run time
+syntax
+
+             WebDriverWait refNmae = new WebDriverWait(diver,10 ); ----->sec
+             wait.until(ExpectedConditins.alertIsPresent()); ------> so many condition is available like alertIsPresent
+PageLoadTimeOut :
+
+ syntax
+               driver.manage().timeOuts.PageLoadTimeOut (10,TimeUnits.SECONDS)
+ 
+        default = 300 ms
+   it will wait for the webpage to be fully loaded
+   if the webpage loaded before the given time it will skip remaining time
+   if the webpage not loaded within given time it will throw TimeOutException at run time
+
+FluentWait
+
+syntax
+           wait<WebDriver> w = new fluentWait<WebDriver>(driver).withtimeouts(30,TimeUnit.Seconds).pollingEvery(30,TimeUnit.Seconds).ignoring(Type.class);
+
+Robot class :
+             it is a class from java.awt; pakage
+
+syntax
+      Robot r = new Robot();
+example
+       		 r.keyPress(KeyEvent.VK_DOWN);
+		 r.keyRelease(KeyEvent.VK_DOWN);
+		 r.keyPress(KeyEvent.VK_ENTER);
+     	         r.keyRelease(KeyEvent.VK_ENTER);	
+
+it will throw AWT exception at compile-Time
+By using throws keyword we will declare the exception
+
+JavaScriptExcecutor
+             it is an interface 
+             with help of JavaScriptExcecutor we can also intract with webelements
+             inside JavaScriptExcecutor we two methods to execute script
+                executeScript()
+                executeAsyncScript()
+Syntax
+        JavaScriptExcecutor refName = (JavaScriptExcecutor)driver;
+example
+
+        JavaScriptExcecutor refName = (JavaScriptExcecutor)driver;
+actions
+       click
+       sendKeys 
+    scroll operations
+    Highlight element
+
+
+scroll operations :
+
+ scroll/scrollTo
+ scrollBy() ----> by window pixels
+ scrollIntoView() 
+
+scrollIntoView() 
+ 
+   syntax
+           js.executeScript("arguments[0].scrollIntoView()", webelement)
+
+
+ scrollBy()
+         
+    syntax 
+            js.executeScript("arguments[0].scrollBy(x,y)")
+
+Highlight a webelement
+ 
+               js.executeScript("arguments[0].setAttribute('style','color:pink')",WebElement)
+
+
+for finding element by javascript
+
+            js.executeScript("document.getElementsId('value'));
+for sendKeys()
+           js.executeScript("document.getElementsId('value').value='data');
+
+
+Window handling :
+                 getWindowHandle(); -------------->    retrive the current window id
+                 return type String
+                 getWindowHandles(); ------------->    retrive the current and all other window id
+                 return type set<String>   because every id is unique  and there is no duplicte id so set is enough and we dont nead list 
+               
+How do you switch driver position
+
+
+
+
+Broken link
+             collect all the 'a' tagname with help of tagname and findElements  and stored in list
+             iterate the list and retrive the herf value by using getAttribute()
+             before conect to url we check the herf value is not empth or null
+             if its empty we skip iteration
+
+
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

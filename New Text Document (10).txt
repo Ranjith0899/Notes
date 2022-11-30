@@ -1,0 +1,13 @@
+SDP 
+
+         We use SDP mainly to hide the test data
+         In SDP we all our test data will be stored in properties file as key and value pair 
+         We get the test data from properties file in TestDataReader class using methods from properties class such as load() and getproperties()
+         At first we intialize the  properties with refname  in class levelop as public and static   -------> public satic Properties p:
+         TestDataReader class we first create the file usind File refname = new File(path);  --------> File f = new File(path);
+         then we pass that file in FileInputStream refname = new FileInputStream(File refname);  ------> FileInputStream fis = new FileInputStream(f)
+         then we create the object for properties class p = new properties(); 
+         then we pass the fileinputstream in load method which will let us to get the test data from properties file using getProperties(); method.
+         
+         
+         

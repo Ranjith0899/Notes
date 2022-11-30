@@ -1,0 +1,832 @@
+task --> print vs println
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+  While loop (while loop with condition) :
+
+       it is a loop.
+       it is a entry level condition checking.    
+
+  syntax:
+        while(condition) { 
+                           implementation part;
+
+                           iteration; }                              }
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  Do-while :
+          it is exit level condition checking loop.
+
+  Syntax:
+      
+    do { 
+        implementation part;     
+         iteration;
+        }while(condition);  
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+Slection Statement
+      if
+      else-if
+      else
+      switch
+
+Jumping statement
+       break --> it will exit from loop
+      continue --> it will skip an paticular iteration
+
+_______________________________________________________________________
+note 
+    =  ---> assiging operator
+   ==  ---> condition / checking operator
+     for primitive datatype we must use == opearator 
+     for non primitive datatype we can use == opearator or .equals 
+     java is case sensitive
+________________________________________________________________________     
+
+
+Logical Operators
+     
+       &&  ---> logical AND ----> both condition must have to be satisified
+       || ----> logical OR ----->  one of condition have to be satisified
+
+Break
+       we can't use break in if statement
+       we can use only use it only in if statement inside loop
+switch
+      it's like a if and else selection statement
+      key reperesents variable name
+      value represents variable value
+      after every we must give break
+
+syntax 
+                  switch(key){
+                              case value:
+                              implementation part
+                              break;  }
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+Nested for loop 
+outer loop indicates row
+inner loop indicates coloum
+
+syntax:
+ 
+          for(intializaton;condition; iteration){
+
+          for(intializaton;condition; iteration){
+                                                  }
+                                                             }
+
+Execution process:
+             in outside loop 
+                    1. intialization
+                    2. condition
+       if condition is true it will go to inner loop.
+              in inside loop
+                    1.intialization
+                    2.conditoion       
+       if condition is true it will execute the implementation part            
+                   inner loop iteration
+       after iteration if the condition is false it exits the inner loop
+       now iteration occurs in outside loop
+       if the condition in outside loop is true it enters the inside loop again and loops inside until the condition fails in inside loop
+       this process repeats until the outside loop condition gets false
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+task 
+start
+1 2 3 
+1 2 3 
+1 2 3 
+End
+
+program
+
+    pakage
+    public class New {
+	public static void main(String[] args) {System.out.println("Start");
+for (int i = 1; i <=3; i++) {
+	for (int t= 1; t <=3; t++) {System.out.print(t+" ");
+		
+	}
+	System.out.println();	
+}
+System.out.println("End");}}
+
+process
+system.out.println("Start")        start
+enters outside loop
+int i = 1
+       i>=3--> true (1<=3)
+enters inside loop
+        int j = 1
+       j>=3--> true (1<=3)         Start
+       System.out.print(1+" ")     1
+       j++  --> 1+(1)
+ int j = 2
+       j>=3--> true (2<=3)         Start
+       System.out.print(2+" ")     1 2
+       j++  --> 2+(1)
+ int j = 3
+       j>=3--> true (3<=3)         Start
+       System.out.print(3+" ")     1 2 3 
+       j++  --> 3+(1)
+ int j = 4
+       j>=3--> false (4<=3) 
+exits inner loop                  Start
+system.out.println()              1 2 3 
+outside loop
+int i = 2
+       i>=3--> true (2<=3)
+enters inside loop
+        int j = 1                  Start
+       j>=3--> true (1<=3)         1 2 3
+       System.out.print(1+" ")     1
+       j++  --> 1+(1)
+ int j = 2                         Start
+       j>=3--> true (2<=3)         1 2 3
+       System.out.print(2+" ")     1 2
+       j++  --> 2+(1)
+ int j = 3                         Start
+       j>=3--> true (3<=3)         1 2 3
+       System.out.print(3+" ")     1 2 3 
+       j++  --> 3+(1)
+ int j = 4
+       j>=3--> false (4<=3) 
+exits inner loop                  Start
+system.out.println()              1 2 3 
+                                  1 2 3
+outside loop
+int i = 3
+       i>=3--> true (3<=3)
+enters inside loop                 Start
+        int j = 1                  1 2 3
+       j>=3--> true (1<=3)         1 2 3
+       System.out.print(1+" ")     1
+       j++  --> 1+(1)
+ int j = 2                         start
+       j>=3--> true (2<=3)         1 2 3
+       System.out.print(2+" ")     1 2 3
+       j++  --> 2+(1)              1 2 3
+ int j = 3
+       j>=3--> true (3<=3)         Start
+       System.out.print(3+" ")     1 2 3 
+       j++  --> 3+(1)              1 2 3
+ int j = 4                         1 2 3
+       j>=3--> false (4<=3) 
+exits inner loop                   Start
+system.out.println()               1 2 3 
+                                   1 2 3 
+                                   1 2 3
+
+   int i = 4
+   i>=3 false (4>=3)
+exits outer loop
+
+system.out.ln("End")              Start
+                                  1 2 3
+                                  1 2 3 
+                                  1 2 3
+                                  End
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Array:
+-------
+       storing a group of values in a single reference name.
+       it allows a same set of datatypes.
+       it allows homogenus objects.
+       
+types:
+       single dimensional array ----> []
+       double dimensional array ----> [][] ----> TestNG Framework
+
+Declaration
+
+           1. datatype refname[] = new datatype[length];
+           length ----> from 1 to n numberssss
+           index -----> from 0 to (length(n)-1)
+           
+           2. datatype refname[] = [value1,value2,value3]
+
+
+
+
+
+
+Value declaration:
+              refName[index] = value;
+
+Features:
+         it is index based.
+         
+         it is fixed in length.
+       
+         if we dont intialize the value the defalult value of given data type will assigned for the index.
+
+         if we assign value for an index agin it will take overriden value when you call.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+          FOR LOOP                               |FOR EACH LOOP
+                                                 |
+          INDEX LOOP                             |VALUE BASED
+          CONDITION BASED                        |NO NEED FOR CONDITION
+                                                 |IF ITS VALUE PRESENT ---> IT WILL GO TO INSIDE LOOP
+                                                 |IF VALUE NOT PRESENT ----> IT WILL NOT GO TO THE LOOP
+         ITERATION IS MUST OTHERWISE IT WILL BE  |NO ITERATION NEEDED
+      INFINITE LOOP
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OPERATORS
+
+/ ---> division ---> used to find quoient
+% ---> modulus operator ---> it will find remainder
+= ---> assigining operator
+== --> condition operator
+&& --> logical AND
+|| --> logical OR
++ ---> concat / addition
+* ---> multiplication
+!= --> not equal
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+                                          JVM  
+
+                         Stack                   Heap
+                         Static memory           Dynamic memory
+                         fallow LIFO memory                                                                              (LIFO--->last in first out)
+                         Variables,Array         String,String Buffer,String Builder and Object
+                                                 In heap the string are stored in Stringconstantpool
+                         JVM will throw          JVM will throw 
+                      StackOverFlowError         OutOfMemoryError
+String :
+                collection of words or characters sequences enclosed with double quotes.
+                string are stored in string constant pool. (inside heap memory)
+                string comes from java.lang  pakage .
+                it is a class in java.lang .
+                string implements from serializable,Comparable and CharSequence Interface.
+                default value of string is null .
+                it is index based.
+                it is immutable and it is also called literal string
+syntax :
+       String refname = "data";
+
+
+ 
+String functions :                                                                                                           return type
+                                                                                  
+   length --->to find the length of string                                       (refname.length()                                        int
+   equals----> it will check two string                                          (refname.equals())                                       boolean
+   equalsIgnoreCase----> it will check two string  without considering case      (refname.equalsIgnoreCase())                             boolean
+   toUpperCase----> it will convert an entire string into upper case             (refname.toUppercase())                                  string
+   toLowerCase----> it will convert an entire string into lower case             (refname.toLowercase())                                  string
+   charAt(index)---> if we pass index it will return the particular              (refname.charAt(index))                                  char
+                     character , - or out of index argument will                 
+                     throw stringindexoutofbounderror during run time
+   indexOf(char)--->if we pass an char it will return the index of the first     (refname.indexOf(char))                                   int
+                    occurance of the char in the string
+                    if we pass char which is not occured in string 
+                    it will give -1 as output
+  lastIndexof(char)-->if we pass an char it will return the index of the last    (refname.lasetIndexOf(char))                              int
+                    occurance of the char in the string
+                    if we pass char which is not occured in string 
+                    it will also give -1 as output
+  contains(char)---> it will check the presence of an character or word          (refname.contains(char))                                  boolean
+  startswith(string) --> it will check the string is starts with given prefix    (refname.statsWith(string))                               boolean 
+                          or not
+  endsWith(string) --> it will check the string is ends with given sufix or not  (refname.endsWith(string))                                boolean 
+  trim-----> it will remove unwanted space                                       (refname.trim())                                          string
+  replace(oldChar,newChar)---> it is used to replace old character or word       (refname.replace(oldChar,newChar))                        string
+                               into given new character or word
+  replaceAll---> used to replace all smillar kind of character                   (refname.replace(oldChar,newChar))                        string
+  concat(string)-----> it will merge two strings                                 (refname.concat(string))                                  string
+  subString(int beginIndex)---> it will fetch the string from given index        (refname.subString(int beginIndex))                       string
+  subString(int beginIndex, int endIndex)---> it will fetch the string 
+                                         between given  begin and end index
+  join()---->  it is static method it is used to add delimeter to the elements   (String.join(delimeter,elements))                         string
+  split()---> it will split the string                                           (refname.split(""),refname.split(" "))                    string[]
+ 
+
+
+
+How to identify the memory reference ?
+              system.identiyHashCode(refName)
+               inside print statement or use return type
+                                                                                                                                                                                                    
+                          String                                       String Buffer                                        String Builder
+
+type              immutable/literal                                   mutable/ non-literal                                  mutable/ non-literal                
+
+
+reverse          we cant reverse literal string                       we can reverse string buffer                          we can reverse string builder
+                 by using built-in function                           by reverse() function                                 by reverse() function     
+                
+duplicate        if we crete duplicate values                         new memory will allocated every time                  new memory will allocated every time
+                 the memory will be shared                            even the value is duplicated because we use           even the value is duplicated because we use
+                                                                      new keyword during intialize                          new keyword during intialize
+
+concat           if we perform concat new memory will                 we cant perform concat                                we cant perform concat
+                 be allocated  
+
+append           we cant perform appand in string                     if we perform append memory will be shared            if we perform append memory will be shared
+
+
+memory          inside the heap memory (string constant pool)         in heap memory                                        in heap memory
+
+
+                                                                       synchronized                                         Asynchronized
+                                                                       one by one process (slow)                            fast process
+                                                                       it doest allow multiple thread                       it allow multiple thread
+                                                                       thread is safe                                       thread is not safe
+                        
+
+
+Buffer methods
+
+
+append                 it will concat two string buffers and share the same memory                                      string buffer
+
+insert(index,char)     it will inserst the char given sentence in given index                                           string buffer 
+
+replace(startindex,endindex-1,words) replace the words inbetween the given index                                        string buffer                          
+
+delete(startindex,endindex-1) it will delete the words inbtween given index                                             string buffer
+
+reverse ()                    it will reverse the string buffer
+
+
+Collection :
+
+
+           A group of objects is called collection.
+           it does not have any fixed length and so there is no memory wastage occurs.
+           it is heterogenus (it allows diffrent datatypes in single collection ).
+           collection is an interface from java.util  package.
+
+collection ----> interface
+collections ---> class
+
+parent class of all calss in java : object
+parent interface  of all interface in java : iterable
+parent class of all exception is : thowable
+parent interface  of all interface in selinium : search contex
+
+
+collection<E> or collection<warpper class>
+   <> ----> generics :
+                 it will protect the given datatype inside generics.
+   warapper class :
+                it will warp primitive datatype and convert it into class object.
+
+
+Data type                       wrapper class                         parent class
+
+byte                            Byte                                   object
+short                           Short                                  object
+int                             Integer                                object
+long                            Long                                   object
+float                           Float                                  object
+double                          Double                                 object
+char                            Character                              object
+bolean                          Bolean                                 object
+String                          String                                 object
+
+
+Types :
+
+        List<E>
+        Set<E>
+        Queque<E>
+___________________________________________
+
+       Map<key,Value>  ----> seprated interface
+
+
+
+
+                                                     COLLECTION (INTERFACE)
+
+
+                    LIST                              SET                                         MAP                ------> interface
+         
+                ArrayList                             HashSet                                    HashMap             |
+                LinkedList                            linkedHashSet                              LinkedHashMap       |
+                vector                                TreeSet                                    TreeMap             |-----> class
+                                                                                                 HashTable           |
+                                                                                                 Concurant HashTable |
+
+                                                                                                 Order               ------> insertion
+
+
+List (Interface) :
+
+     It is a interface.
+     It is index based.
+     It allows duplicate values.
+     It allows more than one null values.     
+     We can't create for ist but with help of implemented classes like ArrayList,LinkedList and Vector and also with upcasting
+   we can create object in list.
+     it prints in insertion order.
+     We can iterate list with help of for, foreach,iterator,list iterator.
+
+Object creation :
+           List<Wrapper Class> refName =  New ArrayList<Wrapper Class>();   ----->upcasting
+
+ArrayList :
+             it is class.
+             it allow duplicate values.
+             it allow more than one null values.
+             it prints in insertion order.
+             array is asyncronized.
+             it allows multithreading so process is fast but theard is not safe.
+             searching and retrieving is very easy because it implements RandomAccess Interface.
+             insertion and deletion is difficult.  
+             ArrayList also known as re-sizable array or dynamic array.
+             default load capacity : 10 .
+             ArrayList implements RandomAccess,Serilizable, Cloneable.
+             it allows heterogenus objects.
+
+
+   list of methods                           Purpose                                             return type
+
+
+   add(Object)                  to add the values in isection order                              -----------
+
+   add(index,object)            it add the value in particular index                             -----------                    
+
+   size()                       it will return the number of elements in the list                 int
+
+   indexOf(element)             it will return index of first occurance element in the list       int
+
+   LastIndexOf(element)         it will return index of last occurance element in the list        int
+
+   contains(element)            it will check the presence given element in the list              boolean 
+   
+   get(Index)                   it will return the value from the given index from the list       object
+
+   set(index,object element)    it will replace the given element in the given index              -----------
+
+   isEmpty()                    it will check the list is empty or not                            boolean
+
+   clear()                      it will clear the all the elements in list and return as          -----------
+                                emptylist []                                                      
+ 
+  remove(index)                 it will remove the element of the given index                     -----------   
+
+  addAll(list)                  it add the given lists                                            -----------               
+   
+  removeAll(list)               it will remove all comman elements in lists                       -----------         
+
+  retainAll(list)               it retian all comman elements from the lists                      ----------- 
+
+  toArray()                     it converts list into array                                       Object[]
+
+  toString()                    it converts list into string                                      String
+
+
+
+Linked list :
+             it is class.
+             it allow duplicate values.
+             it allow more than one null values.
+             it prints in insertion order.
+             it is asyncronized.
+             it allows multithreading so process is fast but theard is not safe.
+             insertion and deletion  is very easy because it implements Queque(Interface), Deque(Interface) and AbstsractSequentialList (Class). 
+             searching and retrieving is difficult.
+             default load capacity : 10
+             it allows heterogenus objects.
+             Linked list mostly store data in the form of Doubly linked list. 
+
+
+
+Vector :
+             
+           It is also called as stack.
+           It is a legacy class (since java 1).
+           It is Synchronnized.
+           It doesn't support multi-threading so process is slow but the therad will be safe.
+
+Set :                
+
+           It is an Interface.
+           It is value based.
+           It does't allow duplicate value.
+           It prints in random , insertion or asscend order based on type of the class. 
+           We can't create a object for set but with help of implemented class like HashSet,LinkedHashSet and TreeSet with upcasting.
+           Index based method like indexOf() , lastIndexOf() and get() are not available here because Set is value based.
+           We can itrate the set by foreach and iterator.
+
+HashSet :
+
+          It is a Class.
+          It prints in Random order.
+          It does't allow duplicate values and duplicate null values.
+          It will allow Heterogenus object.
+          It is Asyncronized.
+          It allows multithreading so process is fast but theard is not safe.
+          Underlying data structure : based on Hashcode and Hashmap 
+         
+
+Linked HashSet :
+
+          It is a Class.
+          It prints in Insertion order.
+          It does't allow duplicate values and duplicate null values.
+          It will allow Heterogenus object.
+          It is Asyncronized.
+          It allows multithreading so process is fast but theard is not safe.
+          Underlying data structure : based on HashTable
+
+TreeSet :
+
+          It is a Class.
+          It prints in asscending order because it implements SortedSet.
+          It does't allow duplicate values and not even a single null value, if we add null point in Treeset it will throw null pointer exception at run time
+          It will allow only Homogenus object  to faciliate asscending order printing, if we add heterogenus object in TreeSet it will throw class cast exception
+          at run time .
+          It is Asyncronized.
+          It allows multithreading so process is fast but theard is not safe.
+          Underlying data structure : TreeSet implements from NavigableSet and SortedSet.
+          TreeSet have a Natural sorting order because of SortedSet and Comparable Interface.
+
+
+Map :
+
+     
+         It is an Interface which doest from java.util.colection and its from java.util.
+         Map is a key and Value pair
+           
+            key + value = one entry
+
+         Key will allow duplicate value but only fetch the override key. (only takes the overriden value)
+         Value will allow duplicate value.
+         We can ittrate Map with the help of entryset().
+         We can  create object with upcasting with implemented classes like HashMap, LinkedHashMap,TreeMap and HashTable.
+         
+Map Methods :
+
+
+   Method                                      function                                          return type                               
+
+   put(key , value )           used add key and value to the map                                 ___________
+
+   size()                      it will return the number of entries in the map                   int
+
+   containsKey(key)            it will will check the map contains or not the given key          boolean
+
+   containsValue(value)        it will will check the map contains or not the given value        boolean
+   
+   clear()                     it clears the the map                                             ___________                
+
+   isEmpty()                   it check the given map empty or not                               boolean
+
+   get(key)                    it returns the value at the key if we give unknown key it will    value WrapperClass
+                               return null value                                                 
+
+   keySet()                    it will return all the key from the map                            Set <Key WrapperClass >                 
+
+   values()                    it will return all the values from the map                         Collection <value WrapperClass>                  
+
+   entrySet()                  it will return the entries                                         Set<Entry<Key WrapperClass,value WrapperClass>>                                      
+
+HashMap :
+
+
+           it is an class.
+           it allows duplicate keys but override it.
+           it allow duplicate values.
+           it allows null value in both key and value.
+           it prints in random order.
+           it is asynchronised.
+           multitherading is possible, process is fast but therad is not safe.
+
+
+
+
+
+LinkedHashMap :
+
+           it is a class.
+           it prints in insertion order
+           it allows duplicate keys but override it.
+           it allow duplicate values.
+           it allows null value in both key and value.
+           it is asynchronised.
+           multitherading is possible, process is fast but therad is not safe.
+
+TreeMap :
+
+           it is a class.
+           it prints in asscending order.
+           it does't allows null in key but allows null in value.
+           it allows duplicate keys but override it.
+           it allow duplicate values.
+           it is asynchronised.
+           multitherading is possible, process is fast but therad is not safe.
+
+HashMap :
+ 
+           it is a class.
+           it prints in random order.
+           it does not accept null in both key and value.
+           it allows duplicate keys but override it.
+           it allow duplicate values.
+           it is synchronised.
+           multitherading is not possible, process is slow but therad is safe.
+           inside hashtable class we have a propertie class.
+
+
+ConcorruentHashMap :
+                
+
+           it is class from java.util.concurrent
+           it prints in random order.
+           it does not accept null in both key and value. 
+           it allows duplicate keys but override it.
+           it allow duplicate values.
+
+
+
+           it is synchronised.
+           multitherading is not possible, process is slow but therad is safe.          
+
+
+
+
+                                                                  Object
+                                                                 Throwable
+                                  Exception                                                            error
+                 compile time                     run time                                memory error             assertion error 
+                      
+              File not found exception         Classcastexception
+              Class not found exception        Nullpointer
+              Interuppted exception            Arrayoutofindex
+              Io exception                     stringoutofindex
+              AWT exception                    indexoutofbound
+                                               arithmetic
+                                               Inputmissmatch
+                                               IllegalArgument
+                                               numberformat
+
+   public class File not found exception extends  Io exception
+   public class Io exception extends Exception    
+
+Exception :
+
+            exception is an event that occurs during the execution of a program that distrupts the normal flow the of instruction during the excecution
+of the program.
+
+compile time exception:
+
+
+with help of throws keyword we can easily handle checked or compile time exception
+
+
+
+Run time exception
+
+
+try-catch,try-finaly,try-multiplecatch,try-catch-finaly check to handle runtimeexception 
+
+
+try-Catch
+try :
+       it is a block.
+       it will try to execute the code inside the try block.
+       if poit throws exception--> it will go to catch block.
+       if there is no exception in the try block it will not go to catch block.
+
+Catch :
+        it is a block.
+        it will catch the exception which occurs in try, if the exception occurs in catch block it cant handle it.
+        catch block must be parametrized. parametrized belongs to childclass exception or exception.
+        we can use multiple catch block.(overloading)
+
+finally :
+          it is a block.
+          the final block will be excecuted even there is no exception occurs at try. 
+          System.exit(0) will terminate the progrman, which can be used in finally block.
+
+              
+Exception
+            program will terminate at line itself.
+            it will throw the exception with help of printStackTrace() --> it will trace the exception and print it in console          
+            printStackTrace() --> it involves with ErrorOutputStream.
+
+
+
+
+Constructor:
+
+             It is a block of code and it will intialize the class object.
+             With the help of new key word we invoke constructora and save it in parrent class or current class.
+             Whenever we create an object in an class the constructor will get invoked automatically but without constructor we cant create an object in class.
+             In Interface and abstract class we cant create object buecuase there is no constructor avilable in there.
+             Thats why we have go for upcating in interface to invoke child class constructor and store it in parent interface. 
+             Class name and constructor name must be same.
+             Constructor doesnt have void that means it is no return type.
+             Constructor canot be static,final and abstract.
+
+      Public    : golbal level access
+      private   : class level access (we cant invoke private constructor outside its class)
+      protected : have to use extends to access outside the pakage
+      default   : pakage level access
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Types :
+
+
+       Default constructor
+
+       Non-parametrized constructor or non-Argument constructor | 
+                                                                | ---->  customized constructors
+       parametrizwd constructor or Argument constructor         |       
+
+
+Default constructor :
+
+                      once we create a class our compiler will give a default constructor.
+                      Default constructor is always public and there is no implementation in it.
+                      It will intialize default value of data types and class objects.
+                      With help of new keyword we invoke default constructor and stores in parentclass ref or childclass ref.
+         
+non-Parametrized or non-Argument constructor :
+
+                      This is an user defined constructor.
+                      it can be puplic,private,protectedt or default and can be with or without implementation part.
+                      once we create non-Parametrized constructor the default constructor will be overridden.
+                      With help of new keyword we invoke non-Parametrized constructor and stores in parentclass ref or childclass ref.
+                      
+Parametrized or Argument constructor :
+
+
+                      This is an user defined constructor along with parameters.
+                      it can be puplic,private,protectedt or default and can be with or without implementation part.
+                      once we create Parametrized constructor the default constructor will be overridden.
+                      We can ovderload constructor with diffrent parameters.
+                      With help of new keyword we invoke Parametrized constructor and stores in parentclass ref or childclass ref.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+constructor chaining :
+         
+                     when we invoke a child constructor at the time it will invoke parent constructor with the help of super().
+                     super() occurs in child constructor
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+                   Throw                                                 Throws
+            it is a keyword                                           it is a keyword
+location    inside the method                                         in the method level
+purpose     throw the exception                                       declare the exception
+            it will throw only one exception at a time                it can declare more than one exception at a time  
+                                                                      it will handle compile time exception
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+            

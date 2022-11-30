@@ -1,0 +1,52 @@
+Methodology :
+                  Waterfall
+                  Agile
+
+Waterfall Model :
+                   Dev and QA team will be working separately
+ 
+                   this model leds to delay of endproduct
+                   
+                   we cant find defects at early stage
+             
+                   Testers only recive the product after developed
+                  
+                   No Iterative and Increment model approach
+
+Agile :
+            It is an methodogy
+    two types / board
+                           Scrum   ---------> Depends on Sprint
+
+                           Kanban  --------->  
+                                                                    
+                   Dev and QA team will  working together
+ 
+                   this model leds to get of endproduct faster
+                   
+                   we can find defects at early stage
+             
+                   Testers perform smoke testing frequently    
+                  
+                   Iterative and Increment model approach
+
+Smoke testing  
+                it will perform critical functionalities of the module
+                mainly focused on build stability
+ Scrum board :
+                  Depends upon Sprint basics
+
+Two Types of Sprints
+                            n-1 Automation
+                            Insprint Automation
+
+ Sprit : regular interval of time to complete the paricular work / USER STORIES
+  Time : 14 days - 28 days / 2 weeks - 4 weeks
+
+      Insprint Automation : 
+                             Dev and QA Working together in same sprint
+                             Sprint time : Max 4 weeks
+      n-1 Automation :
+                        once dev complete the unit Testing we will get the user stories after the sprint
+                        sprint time : Max 4 weeks
+                   

@@ -1,0 +1,234 @@
+
+Data Driven Data Provider
+
+consider the bellow data  as excel sheet
+
+----------------------------------
+         |   cell 0  |    cell 1  |            
+----------------------------------
+ row 0   | user_Id1  |   pass_1   |      
+----------------------------------   
+ row 1   | user_Id2  |   pass_2   |
+-----------------------------------
+ row 2   | user_Id3  |   pass_3   |      
+----------------------------------   
+ row 3   | user_Id4  |   pass_4   |
+-----------------------------------
+
+DataProvider
+-------------
+
+public class Data_Provider {
+
+@DataProvider
+public String[][] data() throws IOException {
+	File f = new File("C:\\Users\\ELCOT\\Documents\\DATA.xlsx");
+	FileInputStream iS = new FileInputStream(f);
+	Workbook w = new XSSFWorkbook(iS);
+	Sheet sheetAt = w.getSheetAt(0);                        // Traverse Into Sheet
+	int rows = sheetAt.getPhysicalNumberOfRows();           // Finding physical number of Rows in the Sheet
+	Row row_1 = sheetAt.getRow(0);                          // Traverse Into Any row just to find Number of cells 
+	int cells = row_1.getPhysicalNumberOfCells();           // Finding physical number of cells in the row
+	String allData [][] = new String  [rows][cells];        // creating 2D Array  with physical number of Rows and physical number of cells we found in previous Steps
+	for (int i = 0; i <rows; i++) {                         // for loop to traverse into all physical rows one by one 
+		Row row = sheetAt.getRow(i);                    // traversing into all physical rows one by one
+		for (int j = 0; j <cells; j++) {                // for loop to traverse into all physical cells one by one 
+		Cell cell = row.getCell(j);                     // traversing into all physical cells one by one
+	CellType type = cell.getCellType();                     // Finding cell type 
+	if (type.equals(CellType.STRING)) {	                // if condition where we get String cell value   
+	allData[i][j] = cell.getStringCellValue();              //  storing the string value in 2D array with reference to row number and cell number in excel sheet that is i and j now
+				                  }
+        else if (type.equals(CellType.NUMERIC)) {                   // if condition where we get Numerical cell value  
+        allData[i][j] =String.valueOf(cell.getNumericCellValue());  //  storing the Numerical value in 2D array with reference to row number and cell number in excel sheetthat is i and j now 
+				                  }
+}
+}
+	w.close();                                                 // closing the workbook
+	return allData;                                            // returning 2D Array where we stored all datas from excel sheet 
+	
+}
+
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Process 
+
+----------------------------------
+         |   cell 0  |    cell 1  |            
+----------------------------------
+ row 0   | user_Id1  |   pass_1   |      
+----------------------------------   
+ row 1   | user_Id2  |   pass_2   |
+-----------------------------------
+ row 2   | user_Id3  |   pass_3   |      
+----------------------------------   
+ row 3   | user_Id4  |   pass_4   |
+-----------------------------------
+
+        int rows = sheetAt.getPhysicalNumberOfRows(); ----> rows = 4
+	Row row_1 = sheetAt.getRow(0);                          
+	int cells = row_1.getPhysicalNumberOfCells(); ----> cells = 2 
+ ****************row loop begins ********************
+
+   i=0 i<rows ----> i<4 Condition True
+   Implementation part of row loop
+     Row row = sheetAt.getRow(i); -------> Row row = sheetAt.getRow(0); 
+ 
+ *****cell loop begins******              
+
+ j= 0 j<cells ------> j<2 Condition True 
+ Implementation part of cell loop 
+     Cell cell = row.getCell(j);                     ------->  Cell cell = row.getCell(0);        traversing into cell 0 in row 0
+     CellType type = cell.getCellType();             -------> cell type is String 
+     if (type.equals(CellType.STRING)) {	     -------> if condition true                 
+	allData[i][j] = cell.getStringCellValue();   -------> allData[0][0] = "user_Id1";           
+                                        }
+ Iteration j++ ----->  j = 1 ------> j<2 Condition True 
+ Implementation part of cell loop 
+     Cell cell = row.getCell(j);                     ------->  Cell cell = row.getCell(1);        traversing into cell 1 in row 0
+     CellType type = cell.getCellType();             -------> cell type is String 
+     if (type.equals(CellType.STRING)) {	     -------> if condition true                 
+	allData[i][j] = cell.getStringCellValue();   -------> allData[0][1] = "pass_1";           
+                                        }
+ Iteration j++ ----->  j = 2 ------> j<2 Condition fails
+
+ *****cell loop Ends******
+
+ Iteration i++ i = 1 ----> i<4 Condition True 
+ Implementation part of row loop
+     Row row = sheetAt.getRow(i); -------> Row row = sheetAt.getRow(1); 
+ 
+ *****cell loop begins******              -----> travesing into row 1
+
+  j= 0 j<cells ------> j<2 Condition True 
+  Implementation part of cell loop 
+     Cell cell = row.getCell(j);                     ------->  Cell cell = row.getCell(0);        traversing into cell 0 in row 1
+     CellType type = cell.getCellType();             -------> cell type is String 
+     if (type.equals(CellType.STRING)) {	     -------> if condition true                 
+	allData[i][j] = cell.getStringCellValue();   -------> allData[1][0] = "user_Id2";           
+                                        }
+  Iteration j++ ----->  j = 1 ------> j<2 Condition True 
+  Implementation part of cell loop 
+     Cell cell = row.getCell(j);                     ------->  Cell cell = row.getCell(1);        traversing into cell 1 in row 1
+     CellType type = cell.getCellType();             -------> cell type is String 
+     if (type.equals(CellType.STRING)) {	     -------> if condition true                 
+	allData[i][j] = cell.getStringCellValue();   -------> allData[1][1] = "pass_2"; 
+          
+ Iteration j++ ----->  j = 2 ------> j<2 Condition fails
+
+ *****cell loop Ends******
+
+ Iteration i++ i = 2 ----> i<4 Condition True 
+ Implementation part of row loop
+     Row row = sheetAt.getRow(i); -------> Row row = sheetAt.getRow(2); 
+ *****cell loop begins******              -----> travesing into row 2
+
+  j= 0 j<cells ------> j<2 Condition True 
+  Implementation part of cell loop 
+     Cell cell = row.getCell(j);                     ------->  Cell cell = row.getCell(0);        traversing into cell 0 in row 2
+     CellType type = cell.getCellType();             -------> cell type is String 
+     if (type.equals(CellType.STRING)) {	     -------> if condition true                 
+	allData[i][j] = cell.getStringCellValue();   -------> allData[2][0] = "user_Id3";           
+                                        }
+ Iteration j++ ----->  j = 1 ------> j<2 Condition True 
+ Implementation part of cell loop 
+     Cell cell = row.getCell(j);                     ------->  Cell cell = row.getCell(1);        traversing into cell 1 in row 2
+     CellType type = cell.getCellType();             -------> cell type is String 
+     if (type.equals(CellType.STRING)) {	     -------> if condition true                 
+	allData[i][j] = cell.getStringCellValue();   -------> allData[2][1] = "pass_3";   
+        
+ Iteration j++ ----->  j = 2 ------> j<2 Condition fails
+
+ *****cell loop Ends******
+
+
+ Iteration i++ i = 3 ----> i<4 Condition True 
+ Implementation part of row loop
+     Row row = sheetAt.getRow(i); -------> Row row = sheetAt.getRow(3); 
+ *****cell loop begins******              -----> travesing into row 3
+
+  j= 0 j<cells ------> j<2 Condition True 
+  Implementation part of cell loop 
+     Cell cell = row.getCell(j);                     ------->  Cell cell = row.getCell(0);        traversing into cell 0 in row 3
+     CellType type = cell.getCellType();             -------> cell type is String 
+     if (type.equals(CellType.STRING)) {	     -------> if condition true                 
+	allData[i][j] = cell.getStringCellValue();   -------> allData[3][0] = "user_Id4";           
+                                        }
+ Iteration j++ ----->  j = 1 ------> j<2 Condition True 
+ Implementation part of cell loop 
+     Cell cell = row.getCell(j);                     ------->  Cell cell = row.getCell(1);        traversing into cell 1 in row 3
+     CellType type = cell.getCellType();             -------> cell type is String 
+     if (type.equals(CellType.STRING)) {	     -------> if condition true                 
+	allData[i][j] = cell.getStringCellValue();   -------> allData[3][1] = "pass_4";   
+        
+ Iteration j++ ----->  j = 2 ------> j<2 Condition fails
+
+ *****cell loop Ends******
+
+ Iteration i++ i = 4 ----> i<4 Condition fails 
+
+
+ ****************row loop ends******************** 
+
+
+   w.close(); ----> closing workbook
+   return allData                        ------------->                  allData[0][0] = "user_Id1";
+                                                                         allData[0][1] = "Pass_1";
+                                                                         allData[1][0] = "user_Id2";
+                                                                         allData[1][1] = "Pass_2";
+                                                                         allData[2][0] = "user_Id3";
+                                                                         allData[2][1] = "Pass_3";
+                                                                         allData[3][0] = "user_Id4";
+                                                                         allData[3][1] = "Pass_4"; 
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+implementing in the Data Provider 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+public class DataDriven_And_Data_Provider {
+
+   public static WebDriver driver = Utility_Files.browser_Launch("chrome");
+
+    @Test(dataProvider ="data",dataProviderClass = Data_Provider.class) ----------> specifying data provider method and the class in which the method is present
+    private void print(String userId, String Pass) {           -------------------> specifying number and type of Data we going provide by Data provider.
+                                                                                    Here i specified two Strings because i am passing two set data that is two cells 
+                                                                                    per row.
+       driver.get("https://instagram.com");
+       WebElement userIdTextBox = driver.findElement(By.xpath("//input[@name='username']")); ------> Data from Data Provider
+       userIdTextBox.sendKeys(userId);      // UserId from data provider
+       WebElement passTextBox = driver.findElement(By.xpath("//input[@name='password']"));   ------> Data from Data Provider
+       passTextBox.sendKeys(pass);          // pass from data provider
+       WebElement loginButton = driver.findElement(By.xpath("//div[.='Log In']"));
+       loginButton.click();
+        }
+
+        }
+
+if we execute this program we get the following result
+
+ insta url opens
+ user_Id1
+ pass_1
+ login
+
+ insta url opens
+ user_Id2
+ pass_2
+ login
+
+ insta url opens
+ user_Id3
+ pass_3
+ login
+
+ insta url opens
+ user_Id4
+ pass_4
+ login
+ 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------            
+
+                                                                                                   

@@ -1,0 +1,13 @@
+Tool name 
+
+Maven --------------------> Build Management tool -----------------------------> it helps us to manage dependencies with ease
+Base class ---------------> it is class with all reuseable method -------------> we write all reuseable code here and use them in our runner class
+POM ----------------------> Design Partten ------------------------------------> Page Object Manager we store all the webelements with @findby and initalize them with 
+                                                                                pagefactory and we use them in our runner class with help of Project Object Model it 
+                                                                                is helpfull in avoiding conflict between commen webelements
+Project Object Model -----> it is class with objects for all POM class -------> we use partial POM and Partial Singleton Design Partten
+Logger -------------------> class --------------------------------------------> we use it to avoid sop ststments in runner class
+DataDriven --------------->FrameWork -----------------------------------------> Extract the data from excel sheets by using Apache POI
+TestNG ------------------->FrameWork -----------------------------------------> using TestNG attributes and annotation to customize our source code for various senarios
+                                                                                and it is usefull in generating html reports
+GIT ---------------------->Source Code Management tool -----------------------> push / pull / clone the repositories and maintain the code in server / remote repo

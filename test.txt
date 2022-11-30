@@ -1,0 +1,8 @@
+ 1. how to refresh an webpage  
+ if we invoke the chrome or edge or firefox driver and save them in in WebDriver with refName driver
+ driver.navigate().refresh();
+ 2.how retive current webpage url
+ driver.getCurrentUrl();
+ 3. addAll---> it will add two collection
+    retainAll-->  it will retian commen values from two collection
+    removeAll ---> it will remove commen values from two collection

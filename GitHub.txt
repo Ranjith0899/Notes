@@ -1,0 +1,174 @@
+GitHub
+
+         Source Code Management Tool (SCM)
+
+
+How to find the workspace ?
+         right click on project and show in then system explorer
+
+how to import project in eclipse
+
+ file ---> Import ---> Expand Genral ---> Choose Existing projects into Workspace ---> Next
+
+Select root directory
+                        copy and paste the project path
+                        browser the location
+    IDE                                                                   Terminal
+   Eclipse                                                                   CMD
+   UI / GUI present                                                      no UI / GUI 
+   ctrl+space                                                            pgup/pgdown
+   ctrl+c ctrl+v                                                         no ctrl+c ctrl+v
+
+alternative for github
+
+
+Linux commands
+                 pwd ---> Present Working Directory
+                 cd  ---> change the Directory
+
+
+
+
+
+Local repo  ----> .git folder
+remote repo ----> repositories
+workplace ----> projects
+
+PUSH 
+workplace ----> Local repo  ----> remote repo
+
+
+workplace                 Local repo                       remote repo          
+                            push
+---------------------------------------------------------------------->
+                            pull
+<----------------------------------------------------------------------
+diffrent location          clone
+<----------------------------------------------------------------------
+
+GIT----->GITHUB------>BitBucket(alternative)
+
+Version Control 
+                   centralized
+                   Distributed
+GITHUB :
+         Git Workflow / Architecture : 
+                                                 add                         commit
+Workspace or working tree or working directory -------> Staging Area / Index--------> local repo ---------->  remote repo
+              Untracked files                               Traked files 
+       
+
+linux commands 
+            pwd  --------> present working directory
+             cd  --------> change directory                                 cd path
+             ls  --------> list out all the files in current path
+          touch  --------> create a file                                    touch filename.format
+            cat  --------> print the data in particular file                cat filename.format
+          clear  --------> 
+                                                                             vim filename.format file create and add data into iy
+          wq     --------> write and quit
+          rm               remove the file
+
+
+Git commands 
+              git --version -----> gives version
+              
+for configuration 
+                   git config --global user.email emailID
+                   git config --global user.name  username
+                   git status                                list out the untraked filles and modifications
+                   git init                                  create a local repo                             (.git) empty folder
+                   git add filename.format                   add the particular file
+                   git add .                                 add all the files in folder
+                   git ls-files                              show all files in staging area                         
+                   git commit -m "commitag"                  commit the files from staging area to local repo
+                   git log                                   show all the commit messages
+                   git log --oneline
+                   rm filename.format                        remove files from workspace
+                   git rm --cached filename.format           remove files in staging area
+                   git rm filename.format                    remove files from workspace and local repo
+                   git branch name                           create new branch
+                   git checkout branch name                  switch to branch
+                   git checkout master                       switch to master branch
+                   git checkout -b name                      create and switch to branch
+
+GIT PUSH Steps
+git config --global user.email emailID    // no need if already configured
+git config --global user.name  username  //
+git init                              -------------> create a local repo 
+git add filename.format               -------------> add the particular file
+(or)
+git add .                             ------------->add all the files in folder
+git commit -m "commit tag"            ------------->commit the files from staging area to local repo
+git branch -M main
+git remote add origin https://github.com/Ranjith0899/AutomationPractice.git
+git push -u origin main
+
+
+My Token    --->   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
+
+How to clone the project from remot repo to workplace via Eclipse IDE
+
+File ---> Import ---> Expand GIT ---> projects from GIT---> Next ---> clone URL ---> Next --->
+choose the clone URL and again next 
+Add repo link 
+UserName
+Pass
+select the req branch click next
+import as genral project
+
+
+PUSH
+
+      right click on project 
+
+
+
+                   git config --global user.email emailID
+                   git config --global user.name  username
+                   git status                                list out the untraked filles and modifications
+                   git init                                  create a local repo                             (.git) empty folder
+                   git add filename.format                   add the particular file
+                   git add .                                 add all the files in folder
+                   git ls-files                              show all files in staging area                         
+                   git commit -m "commitag"                  commit the files from staging area to local repo
+                   git log                                   show all the commit messages
+                   git log --oneline
+                   rm filename.format                        remove files from workspace
+                   git rm --cached filename.format           remove files in staging area
+                   git rm filename.format                    remove files from workspace and local repo
+                   git branch name                           create new branch
+                   git checkout branch name                  switch to branch
+                   git checkout master                       switch to master branch
+                   git checkout -b name                      create and switch to branch
+
+
+git config --global user.email emailID
+git config --global user.name  username  
+git init                              -------------> create a local repo 
+git add filename.format               -------------> add the particular file
+(or)
+git add .                             ------------->add all the files in folder
+git commit -m "commit tag"
+git branch -M main
+git remote add origin https://github.com/Ranjith0899/AutomationPractice.git
+git push -u origin main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

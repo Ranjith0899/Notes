@@ -1,0 +1,100 @@
+
+Data Driven Data Provider
+
+consider the bellow data  as excel sheet
+
+----------------------------------
+         |   cell 0  |    cell 1  |            
+----------------------------------
+ row 0   | user_Id1  |   pass_1   |      
+----------------------------------   
+ row 1   | user_Id2  |   pass_2   |
+-----------------------------------
+ row 2   | user_Id3  |   pass_3   |      
+----------------------------------   
+ row 3   | user_Id4  |   pass_4   |
+-----------------------------------
+
+
+public class Data_Provider {
+
+@DataProvider
+public String[][] data() throws IOException {
+	File f = new File("C:\\Users\\ELCOT\\Documents\\DATA.xlsx");
+	FileInputStream iS = new FileInputStream(f);
+	Workbook w = new XSSFWorkbook(iS);
+	Sheet sheetAt = w.getSheetAt(0);                        // Traverse Into Sheet
+	int rows = sheetAt.getPhysicalNumberOfRows();           // Finding physical number of Rows in the Sheet
+	Row row_1 = sheetAt.getRow(0);                          // Traverse Into Any row just to find Number of cells 
+	int cells = row_1.getPhysicalNumberOfCells();           // Finding physical number of cells in the row
+	String allData [][] = new String  [rows][cells];        // creating 2D Array  with physical number of Rows and physical number of cells we found in previous Steps
+	for (int i = 0; i <rows; i++) {                         // for loop to traverse into all physical rows one by one 
+		Row row = sheetAt.getRow(i);                    // traversing into all physical rows one by one
+		for (int j = 0; j <cells; j++) {                // for loop to traverse into all physical cells one by one 
+		Cell cell = row.getCell(j);                     // traversing into all physical cells one by one
+	CellType type = cell.getCellType();                     // Finding cell type 
+	if (type.equals(CellType.STRING)) {	                // if condition where we get String cell value   
+	allData[i][j] = cell.getStringCellValue();              //  storing the string value in 2D array with reference to row number and cell number in excel sheet that is i and j now
+				                  }
+        else if (type.equals(CellType.NUMERIC)) {                   // if condition where we get Numerical cell value  
+        allData[i][j] =String.valueOf(cell.getNumericCellValue());  //  storing the Numerical value in 2D array with reference to row number and cell number in excel sheetthat is i and j now 
+				                  }
+}
+}
+	w.close();                                                 // closing the workbook
+	return allData;                                            // returning 2D Array where we stored all datas from excel sheet 
+	
+}
+
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+implementing in the Data Provider 
+----------------------------------------------------------------------------------------------------------------
+
+public class DataDriven_And_Data_Provider {
+
+   public static WebDriver driver = Utility_Files.browser_Launch("chrome");
+
+    @Test(dataProvider ="data",dataProviderClass = Data_Provider.class) ----------> specifying data provider method and the class in which the method is present
+    private void print(String userId, String Pass) {           -------------------> specifying number and type of Data we going provide by Data provider.
+                                                                                    Here i specified two Strings because i am passing two set data that is two cells 
+                                                                                    per row.
+       driver.get("https://instagram.com");
+       WebElement userIdTextBox = driver.findElement(By.xpath("//input[@name='username']")); ------> Data from Data Provider
+       userIdTextBox.sendKeys(userId);      // UserId from data provider
+       WebElement passTextBox = driver.findElement(By.xpath("//input[@name='password']"));   ------> Data from Data Provider
+       passTextBox.sendKeys(pass);          // pass from data provider
+       WebElement loginButton = driver.findElement(By.xpath("//div[.='Log In']"));
+       loginButton.click();
+        }
+
+        }
+
+if we execute this program we get the following result
+
+ insta url opens
+ user_Id1
+ pass_1
+ login
+
+ insta url opens
+ user_Id2
+ pass_2
+ login
+
+ insta url opens
+ user_Id3
+ pass_3
+ login
+
+ insta url opens
+ user_Id4
+ pass_4
+ login
+ 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------            
+
+
+
+                                                                                                   

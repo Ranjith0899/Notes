@@ -1,0 +1,297 @@
+ comparing similarities and diffrences between List, Set, and Map          
+           
+
+ArrayList :
+             it is class.
+             it allow duplicate values.
+             it allow more than one null values.
+             it prints in insertion order.
+             array is asyncronized.
+             it allows multithreading so process is fast but theard is not safe.
+             searching and retrieving is very easy because it implements RandomAccess Interface.
+             insertion and deletion is difficult.  
+             ArrayList also known as re-sizable array or dynamic array.
+             default load capacity : 10 .
+             ArrayList implements RandomAccess,Serilizable, Cloneable.
+             it allows heterogenus objects.
+
+
+   list of methods                           Purpose                                             return type
+
+
+   add(Object)                  to add the values in isection order                              -----------
+
+   add(index,object)            it add the value in particular index                             -----------                    
+
+   size()                       it will return the number of elements in the list                 int
+
+   indexOf(element)             it will return index of first occurance element in the list       int
+
+   LastIndexOf(element)         it will return index of last occurance element in the list        int
+
+   contains(element)            it will check the presence given element in the list              boolean 
+   
+   get(Index)                   it will return the value from the given index from the list       object
+
+   set(index,object element)    it will replace the given element in the given index              -----------
+
+   isEmpty()                    it will check the list is empty or not                            boolean
+
+   clear()                      it will clear the all the elements in list and return as          -----------
+                                emptylist []                                                      
+ 
+  remove(index)                 it will remove the element of the given index                     -----------   
+
+  addAll(list)                  it add the given lists                                            -----------               
+   
+  removeAll(list)               it will remove all comman elements in lists                       -----------         
+
+  retainAll(list)               it retian all comman elements from the lists                      ----------- 
+
+  toArray()                     it converts list into array                                       Object[]
+
+  toString()                    it converts list into string                                      String
+
+
+
+Linked list :
+             it is class.
+             it allow duplicate values.
+             it allow more than one null values.
+             it prints in insertion order.
+             it is asyncronized.
+             it allows multithreading so process is fast but theard is not safe.
+             insertion and deletion  is very easy because it implements Queque(Interface), Deque(Interface) and AbstsractSequentialList (Class). 
+             searching and retrieving is difficult.
+             default load capacity : 10
+             it allows heterogenus objects.
+             Linked list mostly store data in the form of Doubly linked list. 
+
+
+
+Vector :
+             
+           It is also called as stack.
+           It is a legacy class (since java 1).
+           It is Synchronnized.
+           It doesn't support multi-threading so process is slow but the therad will be safe.
+
+Set :                
+
+           It is an Interface.
+           It is value based.
+           It does't allow duplicate value.
+           It prints in random , insertion or asscend order based on type of the class. 
+           We can't create a object for set but with help of implemented class like HashSet,LinkedHashSet and TreeSet with upcasting.
+           Index based method like indexOf() , lastIndexOf() and get() are not available here because Set is value based.
+           We can itrate the set by foreach and iterator.
+
+HashSet :
+
+          It is a Class.
+          It prints in Random order.
+          It does't allow duplicate values and duplicate null values.
+          It will allow Heterogenus object.
+          It is Asyncronized.
+          It allows multithreading so process is fast but theard is not safe.
+          Underlying data structure : based on Hashcode and Hashmap 
+         
+
+Linked HashSet :
+
+          It is a Class.
+          It prints in Insertion order.
+          It does't allow duplicate values and duplicate null values.
+          It will allow Heterogenus object.
+          It is Asyncronized.
+          It allows multithreading so process is fast but theard is not safe.
+          Underlying data structure : based on HashTable
+
+TreeSet :
+
+          It is a Class.
+          It prints in asscending order because it implements SortedSet.
+          It does't allow duplicate values and not even a single null value, if we add null point in Treeset it will throw null pointer exception at run time
+          It will allow only Homogenus object  to faciliate asscending order printing, if we add heterogenus object in TreeSet it will throw class cast exception
+          at run time .
+          It is Asyncronized.
+          It allows multithreading so process is fast but theard is not safe.
+          Underlying data structure : TreeSet implements from NavigableSet and SortedSet.
+          TreeSet have a Natural sorting order because of SortedSet and Comparable Interface.
+
+
+Map :
+
+     
+         It is an Interface which doest from java.util.colection and its from java.util.
+         Map is a key and Value pair
+           
+            key + value = one entry
+
+         Key will allow duplicate value but only fetch the override key. (only takes the overriden value)
+         Value will allow duplicate value.
+         We can ittrate Map with the help of entryset().
+         We can  create object with upcasting with implemented classes like HashMap, LinkedHashMap,TreeMap and HashTable.
+         
+Map Methods :
+
+
+   Method                                      function                                          return type                               
+
+   put(key , value )           used add key and value to the map                                 ___________
+
+   size()                      it will return the number of entries in the map                   int
+
+   containsKey(key)            it will will check the map contains or not the given key          boolean
+
+   containsValue(value)        it will will check the map contains or not the given value        boolean
+   
+   clear()                     it clears the the map                                             ___________                
+
+   isEmpty()                   it check the given map empty or not                               boolean
+
+   get(key)                    it returns the value at the key if we give unknown key it will    value WrapperClass
+                               return null value                                                 
+
+   keySet()                    it will return all the key from the map                            Set <Key WrapperClass >                 
+
+   values()                    it will return all the values from the map                         Collection <value WrapperClass>                  
+
+   entrySet()                  it will return the entries                                         Set<Entry<Key WrapperClass,value WrapperClass>>                                      
+
+HashMap :
+
+
+           it is an class.
+           it allows duplicate keys but override it.
+           it allow duplicate values.
+           it allows null value in both key and value.
+           it prints in random order.
+           it is asynchronised.
+           multitherading is possible, process is fast but therad is not safe.
+
+
+
+
+
+LinkedHashMap :
+
+           it is a class.
+           it prints in insertion order
+           it allows duplicate keys but override it.
+           it allow duplicate values.
+           it allows null value in both key and value.
+           it is asynchronised.
+           multitherading is possible, process is fast but therad is not safe.
+
+TreeMap :
+
+           it is a class.
+           it prints in asscending order.
+           it does't allows null in key but allows null in value.
+           it allows duplicate keys but override it.
+           it allow duplicate values.
+           it is asynchronised.
+           multitherading is possible, process is fast but therad is not safe.
+
+HashTable :
+ 
+           it is a class.
+           it prints in random order.
+           it does not accept null in both key and value.
+           it allows duplicate keys but override it.
+           it allow duplicate values.
+           it is synchronised.
+           multitherading is not possible, process is slow but therad is safe.
+           inside hashtable class we have a propertie class.
+
+
+ConcorruentHashMap :
+                
+
+           it is class from java.util.concurrent
+           it prints in random order.
+           it does not accept null in both key and value. 
+           it allows duplicate keys but override it.
+           it allow duplicate values.
+
+
+
+ArrayList                              LinkedList                                  Vector                               HashSet                           Linkedset                          TreeSet                                            HashMap             TreeMap           HashTable                ConcurrentHashMap                       
+class                                  class                                       class  (Legacy Class until 1.0)      class                             Class                              class
+allow dupli values                     allow dupli values                          allow dupli values                   doesnt allow dupli values         doesnt allow dupli values          doesnt allow dupli values 
+allow dupli null values                allow one null value only                   allow dupli null values              doesnt allow dupli null values    doesnt allow dupli null values     doesnt allow even single null value 
+Insertion order                        Insertion order                             Insertion order                      Random order                      Inersertion order                  asscending order
+asyncronised                           asyncronised                                Syncronized                          asyncronized                      Asyncronized                       Asyncronized  
+serching and retriving easy            serching and retriving hard
+because of RandomAccess interface      b.. of Queque,Deque,AbstractSeqentiolList                                                                                                             implements SortedSet , Comparable
+insertion and deletion hard            insertion and deletion easy                                                                                                                           NavigableSet
+dynamic or re-sizable array
+default load capcity 10                default load capcity 10
+RandomAccess, Serilizable,
+Coloner.
+Heterogenus                            Heterogenus                                  Homogenus                            Hetrogenus                       Heterogenus                        Homogenus to faciliate asscending order printing  
+Index based                            index based                                  index based                          value based                      value based                        value based
+                                       stores in Doubly Linked List.                                                     based on hashcode,HashMap        based on Hash table
+
+
+
+
+ .
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

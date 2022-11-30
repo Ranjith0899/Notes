@@ -1,0 +1,14 @@
+1. Women   :  //div[.='Categories']//following::li/child::a[.='Women']
+
+             1.Tops : //ul[@style='display: none;']/child::li/child::a[.='Tops']
+             2.T-shirts : //ul[@style='display: none;']/child::li/child::a[.='T-shirts']
+             3.Blouses : //ul[@style='display: none;']/child::li/child::a[.='Blouses']
+
+2. Dresses :  //li[@id='category-thumbnail']//following::li/child::a[.='Dresses']
+
+             1. Casual Dresses : //li[@id='category-thumbnail']//following::ul/child::li/child::a[.='Casual Dresses']
+             2. Evening Dresses : //li[@id='category-thumbnail']//following::ul/child::li/child::a[.='Evening Dresses']
+             3. Summer Dresses : //li[@id='category-thumbnail']//following::ul/child::li/child::a[.='Summer Dresses']
+
+3.T-Shirts  : //a[.='Summer Dresses']//following::li/a[.='T-shirts']
+

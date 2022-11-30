@@ -1,0 +1,18 @@
+WebDriverManager
+
+    ----> webDriverManager helps as in managing driver.exe files for our browser.
+    ----> webDriverManager downloads the required driver.exe file for the given browser and sets the property and launches the browser by itself.
+    ----> instead of System.setProperty() we can use following WebDriverManager method to set the property for the browser launch
+             
+                           WebDriverManager.chromedriver().setup();
+                           WebDriver driver = new Chromedriver();
+             
+                           WebDriverManager.edgedriver().setup();
+                           WebDriver driver = new Edgedriver();
+
+    -----> latest version of webDriverManager makes it much more simple
+    -----> with the latest version of webDriverManager we can launch the browser with an single line of code
+                          
+                            WebDriver driver = WebDriverManager.chromedriver().create();
+
+                            WebDriver driver = WebDriverManager.edgedriver().create();

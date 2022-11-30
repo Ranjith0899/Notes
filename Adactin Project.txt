@@ -1,0 +1,861 @@
+POM
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+package com.pom.adactin;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Book_A_Hotel {
+	public WebDriver driver;
+	public Book_A_Hotel(WebDriver driver1) {
+		this.driver = driver1;
+	 PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(xpath ="//input[@id='first_name']")
+	private WebElement firstName_Txt;
+	@FindBy(xpath ="//input[@id='last_name']")
+	private WebElement lastName_Txt;
+	@FindBy(xpath ="//textarea[@id='address']")
+	private WebElement address_TxtArea;
+	@FindBy(xpath ="//input[@id='cc_num']")
+	private WebElement ccNum_Txt;
+	@FindBy(xpath ="//input[@id='cc_cvv']")
+	private WebElement ccCVV_Txt;
+	@FindBy(xpath ="//select[@id='cc_type']")
+	private WebElement cc_drop;
+	@FindBy(xpath ="//select[@id='cc_exp_month']")
+	private WebElement expMonth_drop;
+	@FindBy(xpath ="//select[@id='cc_exp_year']")
+	private WebElement expYear_drop;
+	@FindBy(xpath ="//input[@id='book_now']")
+	private WebElement bookNow_But;
+	public WebElement getFirstName_Txt() {
+		return firstName_Txt;
+	}
+	public WebElement getLastName_Txt() {
+		return lastName_Txt;
+	}
+	public WebElement getAddress_TxtArea() {
+		return address_TxtArea;
+	}
+	public WebElement getCcNum_Txt() {
+		return ccNum_Txt;
+	}
+	public WebElement getCcCVV_Txt() {
+		return ccCVV_Txt;
+	}
+	public WebElement getCc_drop() {
+		return cc_drop;
+	}
+	public WebElement getExpMonth_drop() {
+		return expMonth_drop;
+	}
+	public WebElement getExpYear_drop() {
+		return expYear_drop;
+	}
+	public WebElement getBookNow_But() {
+		return bookNow_But;
+	}	
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+package com.pom.adactin;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Booked_Itinerary {
+	public WebDriver driver;
+	public Booked_Itinerary(WebDriver driver1) {
+		this.driver = driver1;
+	 PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath ="//a[.='Search Hotel']")
+	private WebElement searchHotel_But;
+	
+	@FindBy(xpath ="//a[.='Logout']")
+	private WebElement logout_But;
+	public WebElement getSearchHotel_But() {
+		return searchHotel_But;
+	}
+
+	public WebElement getLogout_But() {
+		return logout_But;
+	}
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------
+package com.pom.adactin;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Booking_Conformation {
+	public WebDriver driver;
+	public Booking_Conformation(WebDriver driver1) {
+		this.driver = driver1;
+	 PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath ="//input[@id='my_itinerary']")
+	private WebElement myItinerary_But;
+	public WebElement getMyItinerary_But() {
+		return myItinerary_But;
+	}
+
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+package com.pom.adactin;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Login_Page {
+	public WebDriver driver;
+	public Login_Page(WebDriver driver1) {
+		this.driver = driver1;
+	 PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath ="//input[@type='text']")
+	private WebElement id;
+	@FindBy(xpath ="//input[@type='password']")
+	private WebElement pass;
+	@FindBy(xpath ="//input[@type='Submit']")
+	private WebElement login_But;
+	public WebElement getId() {
+		return id;
+	}
+	public WebElement getPass() {
+		return pass;
+	}
+	public WebElement getLogin_But() {
+		return login_But;
+	}
+	
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+package com.pom.adactin;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Search_Hotel {
+	public WebDriver driver;
+	public Search_Hotel(WebDriver driver1) {
+		this.driver = driver1;
+	 PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath ="//select[@id='location']")
+	private WebElement location;
+	@FindBy(xpath ="//select[@id='hotels']")
+	private WebElement hotels;
+	@FindBy(xpath ="//select[@id='room_type']")
+	private WebElement room_Type;
+	@FindBy(xpath ="//select[@id='room_nos']")
+	private WebElement room_Nos;
+	@FindBy(xpath ="//select[@id='adult_room']")
+	private WebElement adult_Room;
+	@FindBy(xpath ="//select[@id='child_room']")
+	private WebElement child_Room;
+	@FindBy(xpath ="//input[@id='Submit']")
+	private WebElement Submit;
+	@FindBy(xpath ="//input[@id='datepick_in']")
+	private WebElement dateIn_Txt;
+	@FindBy(xpath ="//input[@id='datepick_out']")
+	private WebElement dateOut_Txt;
+	@FindBy(xpath ="//a[.='Booked Itinerary']")
+	private WebElement booked_But;
+	
+	public WebElement getBooked_But() {
+		return booked_But;
+	}
+	public WebElement getLocation() {
+		return location;
+	}
+	public WebElement getHotels() {
+		return hotels;
+	}
+	public WebElement getRoom_Type() {
+		return room_Type;
+	}
+	public WebElement getRoom_Nos() {
+		return room_Nos;
+	}
+	public WebElement getAdult_Room() {
+		return adult_Room;
+	}
+	public WebElement getChild_Room() {
+		return child_Room;
+	}
+	public WebElement getSubmit() {
+		return Submit;
+	}
+	public WebElement getDateIn_Txt() {
+		return dateIn_Txt;
+	}
+	public WebElement getDateOut_Txt() {
+		return dateOut_Txt;
+	}
+
+}
+-------------------------------------------------------------------------------------------------------------------------------------------
+package com.pom.adactin;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Select_Hotel {
+	public WebDriver driver;
+	public Select_Hotel(WebDriver driver1) {
+		this.driver = driver1;
+	 PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath ="//input[@type='radio']")
+	private WebElement radio_But;
+	@FindBy(xpath ="//input[@id='continue']")
+	private WebElement continue_But;
+	public WebElement getRadio_But() {
+		return radio_But;
+	}
+	public WebElement getContinue_But() {
+		return continue_But;
+	}
+
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Page Object Manager
+----------------------------------------------------------------------------------------------------------------------------------------
+package com.pom.adactin;
+import org.openqa.selenium.WebDriver;
+public class POM {
+	public WebDriver driver;
+	public POM(WebDriver driver1) {
+		this.driver = driver1;
+	}
+	private Login_Page login;
+	private Search_Hotel search;
+	private Select_Hotel select;
+	private Book_A_Hotel book;
+	private Booking_Conformation book_Con;
+	private Booked_Itinerary booked;
+	public Login_Page getLogin() {
+		if (login==null) {
+			login = new Login_Page(driver);
+		}
+		return login;
+	}
+	public Search_Hotel getSearch() {
+		if (search==null) {
+			search = new Search_Hotel(driver);
+		}
+		return search;
+	}
+	public Select_Hotel getSelect() {
+		if (select==null) {
+			select = new Select_Hotel(driver);
+		}
+		return select;
+	}
+	public Book_A_Hotel getBook() {
+		if (book==null) {
+			book = new Book_A_Hotel(driver);
+		}
+		return book;
+		
+	}
+	public Booking_Conformation getBook_Con() {
+		if (book_Con==null) {
+			book_Con = new Booking_Conformation(driver);
+		}
+		return book_Con;
+	}
+	public Booked_Itinerary getBooked() {
+		if (booked==null) {
+			booked = new Booked_Itinerary(driver);
+		}
+		return booked;
+	}
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Base class i used
+------------------------------------------------------------------------------------------------------------------------------------------------------
+package com.base.class_;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class Utility_Files {
+		public static WebDriver driver;
+	public static WebDriver browser_Launch(String browser) {
+		if (browser.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\Driver\\chromedriver.exe");
+			driver= new ChromeDriver();
+		}
+		else if (browser.equalsIgnoreCase("edge")) {
+			System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")+"\\Driver\\Driver\\msedgedriver.exe");
+			driver = new EdgeDriver();
+		}
+		driver.manage().window().maximize();
+		return driver;	
+	    }
+	
+	public static void impliWait (int sec) {
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(sec));
+		}
+	public static void pageLoadWait(int sec) {
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(sec));
+	    }
+	public static  void getUrl(String url) {
+			driver.get(url);
+		}
+	public static  void navigateToUrl(String url) {
+		driver.navigate().to(url);
+	}
+	public static void navigateback() {
+		driver.navigate().back();
+	    }
+	public static void navigateforward() {
+		driver.navigate().forward();
+	    }
+	public static void refresh() {
+		driver.navigate().refresh();
+	    }
+	public static void close_() {
+		driver.close();
+	    }
+	public static void quit_() {
+		driver.quit();
+		}
+	public static WebElement findEleByXpath (String xpath) {
+		WebElement element = driver.findElement(By.xpath(xpath));
+		return element;
+		}
+	public static List<WebElement> findElementsByXpath(String xpath) {
+		List<WebElement> elements = driver.findElements(By.xpath(xpath));
+		return elements;
+	    }
+	public static void click_(WebElement e) {
+		e.click();	
+	    }
+	public static void send_Keys(WebElement e,String key) {
+		e.sendKeys(key);	
+	    }
+	public static void clear_(WebElement e) {
+		e.clear();	
+	    }
+	public void nav_To(String url) {
+		driver.navigate().to(url);
+		}
+	public static void nav_Ref() {
+		driver.navigate().refresh();
+		}
+	public static void nav_Forward() {
+		driver.navigate().forward();
+		}
+	public static void nav_Back() {
+		driver.navigate().back();
+		}
+	public static String get_Title() {
+		String title = driver.getTitle();
+		return title;	
+		}
+	public static String get_CurrentURL() {
+		String url = driver.getCurrentUrl();
+		return url;
+		}
+	public static Select select(WebElement element) {
+		 Select s = new Select(element);
+		return s;
+	    }
+	public static void selectByText(Select s,String text) {
+		s.selectByVisibleText(text);
+	    }
+	public static void selectByValue(Select s,String value) {
+		s.selectByValue(value);
+	    }
+	
+	public static void source_Destination_Copy(TakesScreenshot t,String destination) throws IOException {
+		File source = t.getScreenshotAs(OutputType.FILE);
+		File des = new File(destination);
+		FileUtils.copyFile(source, des);
+	    }
+	public static void threadSleep(int milli) throws InterruptedException {
+		Thread.sleep(milli);
+	    }
+	public static Actions actions() {
+		Actions a = new Actions(driver);
+		return a;
+		}
+	public static void moveToEle(Actions a , WebElement element) {
+	a.moveToElement(element).build().perform();	
+	   }
+	public static boolean is_Enabled(WebElement element) {
+	     boolean enabled = element.isEnabled();
+	     return enabled;
+	   }
+	public static boolean is_Displayed(WebElement element) {
+	     boolean dispalyed = element.isDisplayed();
+	     return dispalyed;
+	   }
+	public static boolean is_Selected(WebElement element) {
+	     boolean selected = element.isSelected();
+	     return selected;
+	   }
+	
+	public static void alert_(String type,String key) {
+		if (type.equalsIgnoreCase("simple")) {
+			driver.switchTo().alert().dismiss();
+			driver.switchTo().defaultContent();
+			
+		}
+		else if(type.equalsIgnoreCase("confirm")) {
+        	driver.switchTo().alert().accept();	
+        	driver.switchTo().defaultContent();
+		}
+		else if (type.equalsIgnoreCase("prompt")) {
+			driver.switchTo().alert().sendKeys(key);
+			driver.switchTo().alert().accept();
+			 driver.switchTo().defaultContent();
+			}
+		 
+	    }
+	
+	public static List<WebElement> get_Options(Select s) {
+		List<WebElement> options = s.getOptions();
+		 return options;
+	   }
+	public static List<WebElement> get_AllSelected(Select s) {
+		List<WebElement> options = s.getAllSelectedOptions();
+		 return options;
+	   }
+	public static WebElement get_FirstSelectedOptions(Select s) {
+		WebElement option = s.getFirstSelectedOption();
+	
+	 return option;
+	   }
+	public static void deSelectAll(Select s) {
+		s.deselectAll();
+	   }
+	public static boolean is_Multiple(Select s) {
+		boolean multiple = s.isMultiple();
+	   return multiple;
+	   }
+	public static void deSelectBy(Select s, String by,String value_or_text_or_index ) {
+		if (by.equalsIgnoreCase("index")) {
+			int index = Integer.parseInt(value_or_text_or_index);
+			s.deselectByIndex(index);
+			}
+		else if (by.equalsIgnoreCase("value")) {
+			s.deselectByValue(value_or_text_or_index);
+		}
+	    else if (by.equalsIgnoreCase("text")) {
+			s.deselectByVisibleText(value_or_text_or_index);
+		}
+	   }
+	
+	public static void click_AndHold(Actions a,WebElement element) {
+		a.clickAndHold(element).build().perform();
+	   }
+	public static void rel(Actions a) {
+		a.release().build().perform();
+	   }
+    public static List<WebElement> findElementsByTagName(String tagName) {
+        List<WebElement> elements_ = driver.findElements(By.tagName(tagName));
+    	return elements_;
+       }
+	public static void switch_ToFrame(String type,String index_Or_Name_or, WebElement frameElement ) {
+		if (type.equalsIgnoreCase("index")) {
+			int Int = Integer.parseInt(type);
+			driver.switchTo().frame(Int);
+		}
+		else if(type.equalsIgnoreCase("name")) {
+        	driver.switchTo().frame(index_Or_Name_or);	
+		}
+		else if (type.equalsIgnoreCase("webelement")) {
+			
+			driver.switchTo().frame(frameElement);
+			}
+		else if (type.equalsIgnoreCase("parent")) {
+			driver.switchTo().parentFrame();
+			
+		}
+	    }
+    public static void switchToFrameByEle(WebElement frameElement) {
+		driver.switchTo().frame(frameElement);
+	   }
+	public static void switch_ToDefaultContent () {
+		driver.switchTo().defaultContent();
+	  }
+	public static JavascriptExecutor javaScriptExe() {
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+		return j;
+	}
+	public static void jsScrollIntoView(JavascriptExecutor j,WebElement element) {
+		j.executeScript("arguments[0].scrollIntoView();", element);
+
+	}
+	public static String get_CurrentUrl() {
+		String currentUrl = driver.getCurrentUrl();
+		return currentUrl;
+	  }
+	public static String get_Text (String xpath) {
+		String text = findEleByXpath(xpath).getText();
+		return text;
+	  }
+	public static String get_Attribute (String xpath, String name) {
+		String text = findEleByXpath(xpath).getAttribute(name);
+		return text;
+	  }
+	public static void jsScrollDown(JavascriptExecutor j) {
+		j.executeScript("arguments[0].scrollBy(0,document.body.scrollheight);");
+	}
+	public static void jsScrollUp(JavascriptExecutor j) {
+		j.executeScript("arguments[0].scrollBy(0,-document.body.scrollheight);");
+	}
+	public static void robo_NewTab(WebElement element,Actions a) throws AWTException {
+		 Robot r = new Robot();
+		 moveToEle(a, element);
+		 a.contextClick().build().perform();
+		 r.keyPress(KeyEvent.VK_DOWN);
+		 r.keyRelease(KeyEvent.VK_DOWN);
+		 r.keyPress(KeyEvent.VK_ENTER);
+     	 r.keyRelease(KeyEvent.VK_ENTER);	
+	}
+	public static String get_WindowHandel() {
+		String windowHandle = driver.getWindowHandle();
+		return windowHandle;
+	}
+	public static Set<String> get_WindowHandels() {
+		Set<String> windowHandles = driver.getWindowHandles();
+		return windowHandles;
+	}
+
+	public static Workbook get_Workbook (String excel_Path ) throws IOException {
+		File f = new File(excel_Path);
+		FileInputStream iS = new FileInputStream(f);
+		Workbook work = new XSSFWorkbook(iS);
+		return work;
+	}
+	public static String get_Date(Workbook work, int sheet_num,int row_num,int cell_num) throws IOException {
+		Sheet sheetAt = work.getSheetAt(sheet_num);
+		Row row = sheetAt.getRow(row_num);
+		Cell cell = row.getCell(cell_num);
+	    CellType cellType = cell.getCellType();
+	    String date = null;
+	    SimpleDateFormat s = null;
+if (cellType.equals(CellType.NUMERIC)) {
+			Date date1 = cell.getDateCellValue(); 
+			if (s==null) {
+			 s = new SimpleDateFormat("d/MM/YYYY");
+			 }
+			 date = s.format(date1);
+		
+			} 
+               return date;
+	     }
+	public static String cellData(Workbook work, int sheet_num,int row_num,int cell_num) throws IOException {
+		Sheet sheetAt = work.getSheetAt(sheet_num);
+		Row row = sheetAt.getRow(row_num);
+		Cell cell = row.getCell(cell_num);
+	    CellType cellType = cell.getCellType();
+	    String data = null; 
+	    if (cellType.equals(CellType.STRING )) {
+			data = cell.getStringCellValue();
+	}
+		else if (cellType.equals(CellType.NUMERIC)) {
+			
+			double d = cell.getNumericCellValue();
+			
+			int a = (int) d;
+			data = String.valueOf(a);
+	}
+	     
+		  return data;
+		 
+	}
+	public static List<WebElement> findByAttributeName(String name ){
+		List<WebElement> findElements = driver.findElements(By.name(name));
+		return findElements;
+	}
+	public static List<WebElement> findByElementsTagName(String tagName ){
+		List<WebElement> findElements = driver.findElements(By.tagName(tagName));
+		return findElements;
+	}
+	 public static List<String> getWindows() {
+		 Set<String> win = get_WindowHandels();
+		 List<String> l = new ArrayList<String>(win); 
+		 return l;
+	 }
+	 public static void switchToWindow(List<String>window_Handels ,int i) {
+		 driver.switchTo().window(window_Handels.get(i));
+	 }
+    
+   public static void broken_Url_Or_Img(String tagName,String attributeName) throws IOException {
+	    Logger log = Logger.getLogger(Logger.class);
+	    BasicConfigurator.configure();
+	   List<WebElement> list = findByElementsTagName(tagName);
+	   Map<String, String> m = new LinkedHashMap<String, String>();
+	   for (WebElement element : list) {
+		String link = element.getAttribute(attributeName);
+		
+	 if (link==null||link.isEmpty()) {
+		 continue;
+	}
+	 else if (link.startsWith("http")) {
+		 URL url = new URL(link);
+		 URLConnection open = url.openConnection();
+		 HttpURLConnection http = (HttpURLConnection) open;
+		 http.connect();
+		 String message = null;
+		 int code = http.getResponseCode();
+		 if (attributeName.equals("href")&&code>399) {
+		 message = http.getResponseMessage();
+		 m.put(link,message );
+		 Set<Entry<String, String>> entrySet = m.entrySet();
+		
+		for (Entry<String, String> entry : entrySet) {
+			 if (entry.getValue()==null) {
+				 continue;
+			}
+			 else {
+				 log.info( entry);
+			}}}
+		 else if (attributeName.equals("src")&&code!=200) {
+			 message = http.getResponseMessage();
+			 m.put(link,code+" - "+message );
+			 Set<Entry<String, String>> entrySet = m.entrySet();
+			
+			for (Entry<String, String> entry : entrySet) {
+				 if (entry.getValue()==null) {
+					 continue;
+				}
+				 else {
+					 log.info( entry);
+				}}}
+	}
+	}
+   }
+
+
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+runner class
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+package com.Maven_Poject;
+
+import java.io.IOException;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import com.base.class_.Utility_Files;
+import com.pom.adactin.POM;
+
+public class Adactin extends Utility_Files {
+	public static WebDriver driver;
+	public static POM p = new  POM(driver);
+	public static Logger log = Logger.getLogger(Adactin.class);
+	public static Workbook work;
+	public static Actions a ;
+	public static TakesScreenshot tk;
+@BeforeSuite(description = "Browser Launch")
+private void browser() throws IOException {
+	BasicConfigurator.configure();	
+    driver= Utility_Files.browser_Launch("Chrome");
+    impliWait(200);
+	 pageLoadWait(150);
+	 a = actions();
+	 tk = (TakesScreenshot) driver;
+	work = get_Workbook("C:\\Users\\ELCOT\\eclipse-workspace\\Maven_Poject\\TestData.xlsx");
+	log.info("Chrome browser launched");
+}
+@BeforeTest(description = "URL Launch")	 
+private void url() {
+	getUrl("https://adactinhotelapp.com");
+	log.info("Adactin Website Opened");
+}
+@BeforeClass(description =" Adactin Account Login")
+private void log_In() throws IOException, InterruptedException {
+	send_Keys(p.getLogin().getId(),cellData(work, 0, 0, 0));
+    send_Keys(p.getLogin().getPass(),cellData(work, 0, 1, 0));
+	click_(p.getLogin().getLogin_But());
+
+}
+@BeforeMethod
+private void before() throws IOException {
+	Select roomNum = select(p.getSearch().getRoom_Nos());
+	Select adultNum = select(p.getSearch().getAdult_Room());
+	Select childNum = select(p.getSearch().getChild_Room());
+    selectByText(roomNum, cellData(work, 0, 14, 0));
+    selectByText(adultNum, cellData(work, 0, 15, 0));
+    selectByText(childNum, cellData(work, 0, 16, 0));
+}
+@Test(priority = 2)
+private void hotel_Ceerk() throws IOException {
+	Select loc = select(p.getSearch().getLocation());
+	Select hotel = select(p.getSearch().getHotels());
+	Select roomType = select(p.getSearch().getRoom_Type());
+	selectByText(loc,cellData(work, 0, 6, 0) );
+	selectByText(hotel,cellData(work, 0, 2,0));
+	WebElement dateIn = p.getSearch().getDateIn_Txt();
+	clear_(dateIn);
+	send_Keys(dateIn, get_Date(work, 0, 0, 2));
+	WebElement dateOut =p.getSearch().getDateOut_Txt();
+	clear_(dateOut);
+	send_Keys(dateOut, get_Date(work, 0,3, 2));
+    selectByText(roomType,cellData(work, 0, 10, 0));
+    log.info("Trying to book Hotel Creek in Sydney, room type Standard for 21-08-2020 to 24-08-2022 ");
+}
+@Test(priority = 1)
+private void hotel_Hervey() throws IOException {
+	Select loc = select(p.getSearch().getLocation());
+	Select hotel = select(p.getSearch().getHotels());
+	Select roomType = select(p.getSearch().getRoom_Type());
+	selectByText(loc,cellData(work, 0, 7, 0) );
+	selectByText(hotel,cellData(work, 0, 3, 0));
+	WebElement dateIn = p.getSearch().getDateIn_Txt();
+	clear_(dateIn);
+	send_Keys(dateIn,get_Date(work, 0, 3, 2));
+	WebElement dateOut =p.getSearch().getDateOut_Txt();
+	clear_(dateOut);
+	send_Keys(dateOut, get_Date(work, 0, 5, 2));
+    selectByText(roomType,cellData(work, 0, 11, 0));
+    log.info("Trying to book Hotel Hervey in Los Angeles, room type Double for 24-08-2022 to 26-08-2022 ");
+
+}
+
+@Test
+private void hotel_Cornice() throws IOException {
+	Select loc = select(p.getSearch().getLocation());
+	Select hotel = select(p.getSearch().getHotels());
+	Select roomType = select(p.getSearch().getRoom_Type());
+	selectByText(loc,cellData(work, 0, 8, 0) );
+	selectByText(hotel,cellData(work, 0, 4, 0));
+	WebElement dateIn = p.getSearch().getDateIn_Txt();
+	clear_(dateIn);
+	send_Keys(dateIn, get_Date(work, 0, 5, 2));
+	WebElement dateOut =p.getSearch().getDateOut_Txt();
+	clear_(dateOut);
+	send_Keys(dateOut, get_Date(work, 0, 7, 2));
+    selectByText(roomType,cellData(work, 0, 12, 0));
+    log.info("Trying to book Hotel Cornice in London, room type Deluxe for 26-08-2022 to 28-08-2022 ");
+
+}
+@Test(priority = -1)
+private void hotel_Sunshine() throws IOException {
+	Select loc = select(p.getSearch().getLocation());
+	Select hotel = select(p.getSearch().getHotels());
+	Select roomType = select(p.getSearch().getRoom_Type());
+	selectByText(loc,cellData(work, 0, 9, 0) );
+	selectByText(hotel,cellData(work, 0, 5, 0));
+	WebElement dateIn = p.getSearch().getDateIn_Txt();
+	clear_(dateIn);
+	send_Keys(dateIn, get_Date(work, 0, 7, 2));
+	WebElement dateOut =p.getSearch().getDateOut_Txt();
+	clear_(dateOut);
+	send_Keys(dateOut, get_Date(work, 0, 9, 2));
+    selectByText(roomType,cellData(work, 0, 13, 0));
+    log.info("Trying to book Hotel Sunshine in Paris , room type Super Deluxe for 28-08-2022 to 30-09-2022 ");
+}
+@AfterMethod
+private void booking() throws IOException {
+	    click_(p.getSearch().getSubmit());
+	    click_(p.getSelect().getRadio_But());
+	    click_(p.getSelect().getContinue_But());
+	    send_Keys(p.getBook().getFirstName_Txt(),cellData(work, 0, 17, 0));
+	    send_Keys(p.getBook().getLastName_Txt(),cellData(work, 0, 18, 0));
+	    send_Keys(p.getBook().getAddress_TxtArea(),cellData(work, 0, 19, 0));
+	    send_Keys(p.getBook().getCcNum_Txt(),cellData(work, 0, 20, 0));
+	    send_Keys(p.getBook().getCcCVV_Txt(),cellData(work, 0, 21, 0));
+	    Select card = select(p.getBook().getCc_drop() );
+	    Select month = select(p.getBook().getExpMonth_drop());
+	    Select year = select(p.getBook().getExpYear_drop());
+	    selectByText(card,cellData(work, 0, 22, 0));
+	    selectByText(month, cellData(work, 0,23, 0));
+	    selectByText(year,cellData(work, 0, 24, 0));
+	    click_(p.getBook().getBookNow_But());
+	    click_(p.getBook_Con().getMyItinerary_But());
+		click_(p.getBooked().getSearchHotel_But());
+		log.info("Booked");
+}
+@AfterClass
+private void screenshot() throws IOException {
+	click_(p.getSearch().getBooked_But());
+	source_Destination_Copy(tk, cellData(work, 0, 25, 0) );
+	log.info("Screenshot of Booked Itinerary is taken");
+}
+@AfterTest(description = "Adactin Account Log out")
+private void logout() {
+click_(p.getBooked().getLogout_But());
+}
+@AfterSuite
+private void quit() {
+quit_();
+}
+}

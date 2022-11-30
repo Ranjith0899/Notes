@@ -1,0 +1,9 @@
+-osgi.bundle,ch.qos.logback.classic,1.1.2.v20171220-1825
+-osgi.bundle,ch.qos.logback.core,1.1.2.v20160208-0839
+-osgi.bundle,ch.qos.logback.slf4j,1.1.2.v20160301-0943
+-osgi.bundle,org.eclipse.emf.common,2.25.0.v20220325-0806
+-osgi.bundle,org.eclipse.emf.ecore,2.27.0.v20220426-0617
+-osgi.bundle,jakarta.xml.bind,2.3.3.v20201118-1818
+-osgi.bundle,javax.activation,1.2.2.v20201119-1642
+-org.eclipse.update.feature,org.eclipse.emf.common,2.26.0.v20220325-0806
+-org.eclipse.update.feature,org.eclipse.emf.ecore,2.28.0.v20220426-0617

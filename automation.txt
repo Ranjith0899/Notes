@@ -1,0 +1,664 @@
+POM
+------------------------------------------------------------------------------------------------------------------------------------
+package com.pom;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Summer_Dresses {
+	public WebDriver driver;
+	public Summer_Dresses(WebDriver driver1) {
+		this.driver= driver1;
+		PageFactory.initElements(driver, this);
+	}
+@FindBy(xpath = "//input[@id='layered_id_attribute_group_3']")
+ private WebElement size_L;
+@FindBy(xpath = "//input[@id='layered_id_attribute_group_16']")
+private WebElement colour_Y;
+@FindBy(xpath = "//input[@id='layered_id_feature_1']")
+private WebElement compo_p;
+@FindBy(xpath ="//input[@id='layered_id_feature_19']")
+private WebElement type_Short;
+@FindBy(xpath = "//input[@id='layered_manufacturer_1']")
+private WebElement manu;
+@FindBy(xpath ="//img[contains(@alt,'Printed ')]")
+private WebElement img;
+@FindBy(xpath ="//span[.='Quick view']")
+private WebElement quickView;
+@FindBy(xpath = "//input[@id='layered_condition_new']")
+private WebElement condition;
+@FindBy(xpath = "//input[@id='layered_quantity_1']")
+private WebElement avilablity;
+@FindBy(tagName = "iframe")
+private List<WebElement> frame;
+public List<WebElement> getFrame() {
+	return frame;
+}
+public WebElement getSize_L() {
+	return size_L;
+}
+public WebElement getColour_Y() {
+	return colour_Y;
+}
+public WebElement getCompo_p() {
+	return compo_p;
+}
+public WebElement getType_Short() {
+	return type_Short;
+}
+
+public WebElement getManu() {
+	return manu;
+}
+public WebElement getCondition() {
+	return condition;
+}
+public WebElement getAvilablity() {
+	return avilablity;
+}
+public WebElement getImg() {
+	return img;
+}
+public WebElement getQuickView() {
+	return quickView;
+}
+
+}
+---------------------------------------------------------------------------------------------------------------------------------
+package com.pom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Address {
+	public WebDriver driver;
+	public Address(WebDriver driver1) {
+		this.driver = driver1;
+	 PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath ="//div[@id='ordermsg']/textarea")
+	private WebElement des_Text;
+	@FindBy(xpath ="//button[@name='processAddress']/span")
+	private WebElement checkOut;
+	public WebElement getDes_Text() {
+		return des_Text;
+	}
+	public WebElement getCheckOut() {
+		return checkOut;
+	}
+
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+package com.pom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class AddToCart {
+	public WebDriver driver;
+public AddToCart(WebDriver driver1) {
+	this.driver = driver1;
+ PageFactory.initElements(driver, this);
+}
+@FindBy(xpath ="//i[@class='icon-plus']//parent::span")
+private WebElement qtyPlus_But;
+@FindBy(xpath ="//p[@id='add_to_cart']/button/span")
+private WebElement addToCart_But;
+@FindBy(xpath ="//a[@title='Proceed to checkout']/span")
+private WebElement checkout_But;
+public WebElement getQtyPlus_But() {
+	return qtyPlus_But;
+}
+public WebElement getAddToCart_But() {
+	return addToCart_But;
+}
+public WebElement getCheckout_But() {
+	return checkout_But;
+}
+
+}
+----------------------------------------------------------------------------------------------------------------------------------
+package com.pom;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class EveningDresses {
+	public WebDriver driver;
+	 public EveningDresses(WebDriver driver1) {
+			this.driver = driver1;
+		 PageFactory.initElements(driver, this);
+		}
+		@FindBy(xpath ="//input[@id='layered_id_attribute_group_3']")
+		private WebElement size_L_CB;
+		@FindBy(xpath ="//input[@id='layered_id_attribute_group_7']")
+		private WebElement color_Begie_CB;
+		@FindBy(xpath ="//input[@id='layered_id_feature_3']")
+		private WebElement comp_CB;
+		@FindBy(xpath ="//input[@id='layered_id_feature_16']")
+		private WebElement styles_CB;
+		@FindBy(xpath ="//input[@id='layered_id_feature_19']")
+		private WebElement properties_CB;
+		@FindBy(xpath ="//input[@id='layered_quantity_1']")
+		private WebElement avail_CB;
+		@FindBy(xpath ="//input[@id='layered_manufacturer_1']")
+		private WebElement manu_CB;
+		@FindBy(xpath ="//input[@id='layered_condition_new']")
+		private WebElement cond_CB;
+		@FindBy(xpath ="//a[@style='left: 0%;']")
+		private WebElement priceRange_CB;
+		@FindBy(xpath ="//a[@style='left: 100%;']")
+		private WebElement priceRange_CB1;
+		@FindBy(xpath ="//img[contains(@alt,'Printed ')]")
+		private WebElement img;
+		@FindBy(xpath ="//span[.='Quick view']")
+		private WebElement quickView;
+		@FindBy(tagName = "iframe")
+		private List<WebElement> frame;
+		@FindBy(xpath ="//i[@class='icon-plus']//parent::span")
+		private WebElement qtyPlus_But;
+		@FindBy(xpath ="//p[@id='add_to_cart']/button/span")
+		private WebElement addToCart_But;
+		
+		public WebElement getSize_L_CB() {
+			return size_L_CB;
+		}
+		public WebElement getColor_Begie_CB() {
+			return color_Begie_CB;
+		}
+		public WebElement getComp_CB() {
+			return comp_CB;
+		}
+		public WebElement getStyles_CB() {
+			return styles_CB;
+		}
+		public WebElement getProperties_CB() {
+			return properties_CB;
+		}
+		public WebElement getAvail_CB() {
+			return avail_CB;
+		}
+		public WebElement getManu_CB() {
+			return manu_CB;
+		}
+		public WebElement getCond_CB() {
+			return cond_CB;
+		}
+		public WebElement getPriceRange_CB() {
+			return priceRange_CB;
+		}
+		public WebElement getPriceRange_CB1() {
+			return priceRange_CB1;
+		}
+		public WebElement getImg() {
+			return img;
+		}
+		public WebElement getQuickView() {
+			return quickView;
+		}
+		public List<WebElement> getFrame() {
+			return frame;
+		}
+		public WebElement getQtyPlus_But() {
+			return qtyPlus_But;
+		}
+		public WebElement getAddToCart_But() {
+			return addToCart_But;
+		}
+		
+
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+package com.pom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Home_Page {
+	public WebDriver driver;
+	public Home_Page(WebDriver driver1) {
+		this.driver= driver1;
+		PageFactory.initElements(driver, this);
+	}
+@FindBy(xpath = "//a[@class='login']")
+ private WebElement logInBut;
+public WebElement getLogInBut() {
+	return logInBut;
+}
+}
+------------------------------------------------------------------------------------------------------------------------------------------
+package com.pom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class MyAccount {
+	 
+		public WebDriver driver;
+	public MyAccount(WebDriver driver1) {
+			this.driver = driver1;
+		 PageFactory.initElements(driver, this);
+		}
+		@FindBy(xpath ="//div[@id ='block_top_menu']/ul/li/a[@title='Dresses']")
+		private WebElement dresses;
+		@FindBy(xpath ="//div[@id ='block_top_menu']/ul/li/ul/li/a[@title='Evening Dresses']")
+		private WebElement eveningDresses;
+		@FindBy(xpath ="//div[@id ='block_top_menu']/ul/li/ul/li/a[@title='Summer Dresses']")
+		private WebElement summerDresses;
+		
+		public WebElement getSummerDresses() {
+			return summerDresses;
+		}
+		public WebElement getDresses() {
+			return dresses;
+		}
+		public WebElement getEveningDresses() {
+			return eveningDresses;
+		}
+}
+--------------------------------------------------------------------------------------------------------------------------------
+package com.pom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class orderConfirmation {
+	public WebDriver driver;
+	public orderConfirmation(WebDriver driver1) {
+		this.driver = driver1;
+	 PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath ="//div[@id='center_column']//div")
+	private WebElement order_det;
+	@FindBy(xpath = "//a[@title='Log me out']")
+	private WebElement logOut_But;
+	@FindBy(xpath = "//span[@class='price']/strong")
+	private WebElement price;
+	
+	public WebElement getPrice() {
+		return price;
+	}
+	public WebElement getOrder_det() {
+		return order_det;
+	}
+	public WebElement getLogOut_But() {
+		return logOut_But;
+	}
+
+}
+-------------------------------------------------------------------------------------------------------------------------------
+package com.pom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Payment_1 {
+	public WebDriver driver;
+	public Payment_1(WebDriver driver1) {
+		this.driver = driver1;
+	 PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath ="//p[@id='cart_navigation']//button/span")
+	private WebElement order_But;
+	public WebElement getOrder_But() {
+		return order_But;
+	}
+
+}
+----------------------------------------------------------------------------------------------------------------------------------
+package com.pom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Payment {
+	public WebDriver driver;
+	public Payment(WebDriver driver1) {
+		this.driver = driver1;
+	 PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath ="//div[@id='center_column']")
+	private WebElement payInfo;
+	@FindBy(xpath ="//a[@class='bankwire']")
+	private WebElement bank_But;
+	@FindBy(xpath = "//p[@class='product-name']/a")
+	private WebElement dressName;
+	public WebElement getDressName() {
+		return dressName;
+	}
+	public WebElement getPayInfo() {
+		return payInfo;
+	}
+	public WebElement getBank_But() {
+		return bank_But;
+	}
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------
+package com.pom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Shiping {
+	public WebDriver driver;
+	 public Shiping(WebDriver driver1) {
+		this.driver = driver1;
+	 PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath ="//input[@id='cgv']")
+	private WebElement agree_CB;
+	@FindBy(xpath ="//button[@name='processCarrier']")
+	private WebElement checkOut;
+	public WebElement getAgree_CB() {
+		return agree_CB;
+	}
+	public WebElement getCheckOut() {
+		return checkOut;
+	}
+
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------
+ package com.pom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Sign_Up {
+	public WebDriver driver;
+	public Sign_Up(WebDriver driver1) {
+		this.driver = driver1;
+	 PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath = "//input[@id='email']")
+	private WebElement emailIn;
+	@FindBy(xpath = "//input[@id='passwd']")
+	private WebElement passIn;
+	@FindBy(xpath = "//button[@id='SubmitLogin']/span")
+	private WebElement signInBut;
+	public WebElement getEmailIn() {
+		return emailIn;
+	}
+	public WebElement getPassIn() {
+		return passIn;
+	}
+	public WebElement getSignInBut() {
+		return signInBut;
+	}
+	
+	
+
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+package com.pom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Summary {
+	public WebDriver driver;
+	public Summary(WebDriver driver1) {
+		this.driver = driver1;
+	 PageFactory.initElements(driver, this);
+	}
+	@FindBy(xpath ="//p[@class='cart_navigation clearfix']/a/span")
+	private WebElement checkOut;
+	public WebElement getCheckOut() {
+		return checkOut;
+	}
+
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Page Object Manager
+-----------------------------------------------------------------------------------------------------------------------------------------------
+package com.pom;
+
+import org.openqa.selenium.WebDriver;
+
+public class POM {
+	public WebDriver driver;
+	private  Home_Page home ;
+	private Sign_Up signUp  ;
+	private  MyAccount myAcc ;
+	private  EveningDresses evgDress ;
+	private  AddToCart addTo ;
+	private  Summary summ ;
+	private  Address add ;
+	private  Shiping ship ;
+	private  Payment pay1;
+	private  Payment_1 pay2;
+	private  orderConfirmation order;
+	private Summer_Dresses summer;
+
+	public Summer_Dresses getSummer() {
+		if (summer==null) {
+			summer = new Summer_Dresses(driver);
+		}
+		return summer;
+	}
+	public POM(WebDriver driver2) {
+		this.driver = driver2;
+	}
+	public  orderConfirmation getOrder() {
+		if (order==null) {
+			order = new orderConfirmation(driver);
+		}
+		return order;
+	}
+	public Home_Page getHome() {
+		if (home==null) {
+			home = new Home_Page(driver);
+		}
+		return home;
+	}
+	public Sign_Up getSignUp() {
+		if (signUp==null) {
+			signUp = new Sign_Up(driver);
+		}
+		return signUp;
+	}
+	public MyAccount getMyAcc() {
+		if (myAcc==null) {
+			myAcc = new MyAccount(driver);
+			}
+		return myAcc;
+	}
+	public EveningDresses getEvgDress() {
+		if (evgDress==null) {
+			evgDress = new EveningDresses(driver);
+			}
+		return evgDress;
+	}
+	public  AddToCart getAddTo() {
+		if (addTo==null) {
+			addTo = new AddToCart(driver);
+			}
+		return addTo;
+	}
+	public  Summary getSumm() {
+		if (summ==null) {
+			summ = new Summary(driver);
+			}
+		return summ;
+	}
+	public  Address getAdd() {
+		if (add==null) {
+			add= new Address(driver);
+			}
+		return add;
+	}
+	public  Shiping getShip() {
+		if (ship==null) {
+			ship = new Shiping(driver);
+			}
+		return ship;
+	}
+	public  Payment getPay1() {
+		if (pay1==null) {
+			pay1 = new Payment(driver);
+			}
+		return pay1;
+	}
+	public  Payment_1 getPay2() {
+		if (pay2==null) {
+			pay2 = new Payment_1(driver);
+			}
+		return pay2;
+	}
+
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Runner
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+package com.test.ng.trail;
+
+import com.base.class_.*;
+import com.pom.POM;
+
+import java.io.IOException;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class TestNG_Trail extends Utility_Files {
+	public static WebDriver driver = Utility_Files.browser_Launch("Chrome");
+	 public static POM p = new POM(driver);
+	public static Logger log = Logger.getLogger(TestNG_Trail.class);
+	public static Workbook work;
+	public static Actions a = Utility_Files.actions();
+	public static TakesScreenshot tk;
+	public static JavascriptExecutor jk ;
+@BeforeSuite
+private void req() throws IOException {
+	 BasicConfigurator.configure();	
+     work = get_Workbook("C:\\Users\\ELCOT\\eclipse-workspace\\Maven_Poject\\Test_Cases.xlsx");
+     impliWait(200);
+	 pageLoadWait(150);
+}
+@BeforeTest	 
+private void url_launch() {
+	getUrl("https://automationpractice.com/index.php");
+	log.info("Automation Website Opened");
+    tk = (TakesScreenshot) driver;
+    jk= (JavascriptExecutor) driver;
+}
+@BeforeClass
+private void log_In() throws IOException, InterruptedException {
+	threadSleep(20000);
+	click_(p.getHome().getLogInBut());
+    threadSleep(10000);
+	send_Keys(p.getSignUp().getEmailIn(),cellData(work, 0, 3, 16));
+    send_Keys(p.getSignUp().getPassIn(), cellData(work, 0, 13, 16));
+    click_(p.getSignUp().getSignInBut());
+    log.info("Account Logged In");
+}
+@BeforeMethod
+private void dresses() {
+	moveToEle(a,p.getMyAcc().getDresses() );
+}
+@Test(priority = -1)
+private void eveningDresses() {
+	click_(p.getMyAcc().getEveningDresses());
+	click_(p.getEvgDress().getSize_L_CB());
+	click_(p.getEvgDress().getColor_Begie_CB());
+	click_(p.getEvgDress().getAvail_CB());
+	click_(p.getEvgDress().getComp_CB());
+	click_(p.getEvgDress().getCond_CB());
+	click_(p.getEvgDress().getProperties_CB());
+	click_(p.getEvgDress().getManu_CB());
+    moveToEle(a,p.getEvgDress().getImg() );
+    click_(p.getEvgDress().getQuickView());
+    log.info("Evening Dress");
+   
+}
+@Test
+private void summerDresses() {
+	click_(p.getMyAcc().getSummerDresses());
+	click_(p.getSummer().getSize_L());
+	click_(p.getSummer().getColour_Y());
+	click_(p.getSummer().getCompo_p());
+	click_(p.getSummer().getCondition());
+	click_(p.getSummer().getManu());
+	click_(p.getSummer().getType_Short());
+	click_(p.getSummer().getAvilablity());
+	moveToEle(a,p.getSummer().getImg() );
+	click_(p.getSummer().getQuickView());
+	log.info("Summer Dress");
+}
+@AfterMethod
+private void buy() throws InterruptedException, IOException {
+	threadSleep(60000);
+	switchToFrameByEle(p.getEvgDress().getFrame().get(0));
+    threadSleep(30000);
+    click_(p.getAddTo().getQtyPlus_But());
+    click_(p.getAddTo().getAddToCart_But());
+	switch_ToDefaultContent();
+	threadSleep(30000);
+	click_(p.getAddTo().getCheckout_But());
+	click_(p.getSumm().getCheckOut());
+	send_Keys(p.getAdd().getDes_Text(),"Aley Illa Bellu");
+	click_(p.getAdd().getCheckOut());
+	click_(p.getShip().getAgree_CB());
+    click_(p.getShip().getCheckOut());
+	threadSleep(3000);
+	jsScrollIntoView(jk,p.getPay1().getPayInfo());
+	threadSleep(3000);
+	source_Destination_Copy(tk,"C:\\Users\\ELCOT\\eclipse-workspace\\Maven_Poject\\SS\\"+get_Text(p.getPay1().getDressName())+".png" );
+	click_(p.getPay1().getBank_But());
+	click_(p.getPay2().getOrder_But());
+    threadSleep(3000);
+    jsScrollIntoView(jk,p.getOrder().getOrder_det() );
+    source_Destination_Copy(tk,"C:\\Users\\ELCOT\\eclipse-workspace\\Maven_Poject\\SS\\"+get_Text(p.getOrder().getPrice()).replaceAll("[^0-9]", "")+".png" );
+    threadSleep(3000);
+    log.info("Purchased");
+}
+@AfterClass
+private void logout() {
+	click_(p.getOrder().getLogOut_But());
+	log.info("Account logged Out");
+}
+@AfterTest(description = "Automation Purchase completed")
+private void quit() throws InterruptedException {
+	threadSleep(30000);
+	quit_();
+}
+}

@@ -1,0 +1,107 @@
+Program 
+
+public static int a[] = {3,1,7,2};
+public static int int c = 0;
+	public static void main(String[] args) {
+		System.out.println("Ascending");
+		for (int i = 0; i < a.length; i++) {                 --------> consider this as i for loop
+		for (int j = i+1; j < a.length; j++) {               --------> consider this as j for loop
+			if (a[i]>a[j]) {
+				c= a[i];
+				a[i]=a[j];
+				a[j]= c;	
+					}}}
+Process
+intially a[] = {3,1,7,2}
+*****i for loop begins*****
+
+i=0  condition i<a.length ----> i<4  condition True 
+implementation part of i for loop
+
+*****j for loop begins*****
+
+j=i+1 ----> j=0+1 ----> j=1  condition j<a.length -----> j<4  condition True
+implementation part of j for loop
+a[i]>a[j] ----> 3>1 if condition true
+c = a[i] ----> c = 3
+a[i] = a[j] ----> a[0] = 1
+a[j] =c ----> a[1] = 3
+now a[] = {1,3,7,2}
+
+iteration j++ ----> j+1 ----> j=2 condition j<a.length -----> j<4  condition True
+implementation part of j for loop
+a[i]>a[j] ----> 1>7 if condition fails
+now no changes in a[] = {1,3,7,2}
+
+iteration j++ ----> j+1 ----> j=3 condition j<a.length j<4  -----> condition True
+implementation part of j for loop
+a[i]>a[j] ----> 1>2 if condition fails
+now no changes in a[] = {1,3,7,2}
+
+iteration j++ ----> j+1 ----> j=4 condition j<a.length j<4  -----> condition false
+now no changes in a[] = {1,3,7,2}
+
+*****j for loop ends*****
+
+iteration i++ ----> i+1 ----> i=1 condition i<a.length i<4  -----> condition True
+implementation part of i for loop
+
+*****j for loop begins*****
+
+j=i+1 ----> j=2  condition j<a.length j<4  -----> condition True
+implementation part of j for loop
+a[i]>a[j] ----> 3>7 if condition fails
+now no changes in a[] = {1,3,7,2}
+
+iteration j++ ----> j+1 ----> j=3 condition j<a.length j<4  -----> condition True
+implementation part of j for loop
+a[i]>a[j] ----> 3>2 if condition true
+c = a[i] ----> c = 3
+a[i] = a[j] ----> a[1] = 2
+a[j] =c ----> a[3] = 3
+now a[] = {1,2,7,3}
+
+iteration j++ ----> j+1 ----> j=4 condition j<a.length j<4  -----> condition false
+now  no changes in a[] = {1,2,7,3}
+
+*****j for loop ends*****
+
+iteration i++ ----> i+1 ----> i=2 condition i<a.length i<4  -----> condition True
+implementation part of i for loop
+
+*****j for loop begins*****
+
+j=i+1 ----> j=2+1 ----> j=3  condition j<a.length -----> j<4  condition True
+implementation part of j for loop
+a[i]>a[j] ----> 7>3 if condition true
+c = a[i] ----> c = 7
+a[i] = a[j] ----> a[2] = 3
+a[j] =c ----> a[3] = 7
+now a[] = {1,2,3,7}
+
+iteration j++ ----> j+1 ----> j=4 condition j<a.length j<4  -----> condition false
+now no changes in a[] = {1,2,3,7}
+
+*****j for loop ends*****
+
+iteration i++ ----> i+1 ----> i=3 condition i<a.length i<4  -----> condition True
+implementation part of i for loop
+
+*****j for loop begins*****
+
+j=i+1 ----> j=4  condition j<a.length j<4  -----> condition false
+now a[] = {1,2,3,7}
+
+*****j for loop ends*****
+
+iteration i++ ----> i+1 ----> i=4 condition i<a.length i<4  -----> condition false
+
+final  a[] = {1,2,3,7}
+
+*****i for loop ends*****
+
+
+
+
+
+

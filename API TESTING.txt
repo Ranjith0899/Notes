@@ -1,0 +1,127 @@
+API TESTING
+                  API : Application Programming Interface
+  
+HTTP -----> HyperText Transfer Protocol
+HTTPS ----> HyperText Transfer Protocol Secured
+
+URI ----> Uniform Resource Identifier
+URL ----> Uniform Resource Locater
+
+Parameters
+              Path / resource parameter
+                               Its starts with / single forward slash
+
+Query Parameter :
+                    it starts with key = value
+Xml : Extensible Markup Language
+JSON : JavaScript Object Notation
+URL = URI + PARAMETERS
+
+Rest API
+           REST  --> Representional State Transfer
+                 ---> we can get response in .xml or jason format
+Alternative   : SOAOP UI
+                          SOAP ---> Simple Object Access Protocol
+                               ----> we can get response only in .xml 
+                               -----> UI
+
+REST - API /Rest Assured
+
+dependencies 
+               rest-assured
+               jason-path
+               xml-path
+               jason-schema validator
+
+               jason-simple
+
+
+<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>4.3.3</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-path</artifactId>
+    <version>4.3.3</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.rest-assured/xml-path -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>xml-path</artifactId>
+    <version>4.3.3</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-schema-validator</artifactId>
+    <version>4.3.3</version>
+    <scope>test</scope>
+</dependency>
+
+
+
+Step 1 : Add the baseURI 
+                         RestAssured.baseURI= "";
+
+
+step 2 : specify the the request by using RestAssured
+                           
+                               RestAssured.given();
+         it will return the requestSpecification
+               		RequestSpecification req = RestAssured.given();
+
+step 3 
+       we use the required curd operator with RequestSpecification  refname
+
+		Response response = req.get("parameter");
+
+step 4
+           convert response to string by asString method
+             response.asString();
+to getcode 
+            response.getStatusCode();
+            response.getheaders();   
+            response.getSessionId();    
+
+---------------------------------------------------------------------------------------------
+retrive the json value and validate json     
+            
+we need json-simple dependencies
+
+response Body -----> payload in the format of .json
+
+steps 
+       1 create a payload
+       2 convert .json into file
+             file f = new file(path)
+       3 create object for file reader and pass the file in it
+               FileReader reader = new FileReader(f);
+       4 then create object for JSONParser 
+          JSONParser parser = new JSONParser ();
+       5 then use the JSONParser  refname to load the fileReader with parse method as bellow
+            parser.parse(reader); --------> returns ------> object parse = parser.parse(reader);
+       6 convert the returned object to JSONObject by narrowing type casting
+            JSONObject jsonObject = (JSONObject) parse;                    -----> JSONObject implements HashMap
+       7 we pass key to get value from .json file with get method from JSONObject 
+                          jsonObject.get("name");                -------Object value = jason.get("name");
+       8 convert the object to String by toString(); method
+                          value.toString();       -----> String data = value.toString();    
+       9 using the assert we will verify the data
+
+
+
+
+
+
+
+
+
+
+
+

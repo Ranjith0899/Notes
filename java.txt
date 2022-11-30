@@ -1,0 +1,37 @@
+Java:
+java architecture
+diff btw stack and heap
+OOPS
+where do you use oops concepts in selenium
+in java, in selenium
+diff btw encapsulation and abstraction
+what is inheritance and types
+hybrid vs hierarchical
+implements vs extends
+primitive and non-primitive
+is java 100% object oriented ans no!
+compile vs run time polymorphism ?
+diff btw upcasting and downcasting
+diff btw abstract class ana interface
+public vs protected
+how to retrive private value in aother class
+local vs instance vs static
+this vs super
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

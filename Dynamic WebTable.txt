@@ -1,0 +1,44 @@
+package com.selenium.class_;
+
+import java.time.Duration;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Browser_Launch   {
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\ELCOT\\eclipse-workspace\\Selenium\\Driver\\chromedriver.exe" );
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.cricbuzz.com/live-cricket-scores");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+		Thread.sleep(10000);
+		driver.findElement(By.xpath("//a[.='Live Score']")).click();
+        Thread.sleep(10000);
+        List<WebElement> row = driver.findElements(By.xpath("//div[@class='cb-min-inf cb-col-100 ng-scope' and @ng-if='match.miniscore.batsman.length > 0']/div"));
+        for (int i = 0; i <row.size(); i++) {	
+         int  x =i+1;
+         List<WebElement> col = driver.findElements(By.xpath("//div[@class='cb-min-inf cb-col-100 ng-scope' and @ng-if='match.miniscore.batsman.length > 0']/div["+x+"]/div"));
+         for (int j = 0; j < col.size(); j++) {
+        	
+        		 System.out.print(col.get(j).getText());
+				if (j<col.size()-1) {
+					
+				System.out.print("  -  ");}
+         }
+         System.out.println();
+        }
+      
+	
+	}}
+
+xpath used
+//a[.='Live Score']
+//div[@class='cb-min-inf cb-col-100 ng-scope' and @ng-if='match.miniscore.batsman.length > 0']/div
+//div[@class='cb-min-inf cb-col-100 ng-scope' and @ng-if='match.miniscore.batsman.length > 0']/div[1]/div
+//div[@class='cb-min-inf cb-col-100 ng-scope' and @ng-if='match.miniscore.batsman.length > 0']/div[2]/div
+//div[@class='cb-min-inf cb-col-100 ng-scope' and @ng-if='match.miniscore.batsman.length > 0']/div[3]/div

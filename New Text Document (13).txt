@@ -1,0 +1,103 @@
+Testing :
+
+         Expected Meets Actual
+
+Functional Testing :
+                     Testing the basic functionality of the webelement
+                           
+                           Manual
+                           Automation ----> SELENIUM (Testing Tool) alt Cypress , IBM Rational Functional Tester
+
+Selenium Pros and Cons
+
+We already took a close look to Selenium Pros and Cons in a previous post, but to name a few, these are the following pro features or advantages when considering Selenium:
+Because Selenium is an open-source testing tool, there are no license fees for users.
+Selenium is a cross-platform testing tool that works with several browsers.
+Users using Selenium may run tests on any operating system, including Android, Windows, Mac, iOS, and Linux.
+Selenium may be used with a variety of browsers, including Safari, Chrome, Internet Explorer, Mozilla, and Opera.
+Selenium may be connected with other frameworks such as JUnit, TestNG, and NUnit to create reports and manage test cases.
+
+In the other hand, here are some of Selenium's Cons or disadvantages to consider:
+Only web apps may be tested using Selenium. It is not appropriate for testing desktop, mobile, or standalone apps.
+Because it is an open-source product, there is no constant nominal or technical support from any team.
+Selenium tests are unstable. If new versions of Selenium libraries are published to address a problem, the previous test may be disrupted or rendered unstable.
+Selenium's test maintenance is difficult due to its low-level API. It does not aid or support the developer with error capture, page screenshots, or element locators.
+Even though Selenium allows users to conduct parallel tests on several machines, this setup requires quite a bit of additional expertise, without which the tests take much too long to run.
+Testing on pictures is not possible with Selenium.
+cant read barcode ,OTP , captcha cant genrate reports by itself and scroll up or scroll down
+
+Selenium Testing Framework Top Alternatives
+
+If you're looking for a Selenium alternative, here are 6 of the most popular options to consider:
+
+1- Cypress
+Cypress is an open-source automation system that has acquired popularity as alternative of Selenium with a number of capabilities that complement existing development tools. Furthermore, no setup is required to install Cypress.
+
+Cypress has gained popularity as a Selenium-alternative test automation framework. Cypress is a developer-focused framework with quick scalability, solid documentation, and a growing community. While Cypress offers fewer connectors than Selenium, it provides for a simpler execution environment setup.
+
+Although Cypress is a Selenium substitute, the two frameworks are not necessarily exclusive. Cypress may also be used to enhance current Selenium scripts and increase overall test coverage and stability.
+TestQuality has all the test management capabilities you need for creating, maintaining, organizing, and running tests in Cypress, but TestQuality is 
+different from other test management tools in that it is a Test Management Case built for GitHub and Jira workflows and designed to be integrated with 
+virtually all unit testing tools and test automation frameworks like Cypress.
+
+TestQuality also includes features to create and organize Cypress test cases in a global test repository - with preconditions, steps, attachments, and more. 
+All this, in a collaborative testing environment seamlessly integrated with your CI/CD DevOps workflow with powerful live analytics to help you to identify the
+quality of your testing effort, test coverage, high value tests, unreliable tests, and release readiness. 
+   
+
+Protactor
+Protractor is another open-source Selenium alternative designed primarily for testing Angular web applications. Protractor runs end-to-end tests in JavaScript by
+ interacting with the application as a user. As a WebDriverJS wrapper, Protractor supports frameworks such as Cucumber, Mocha, and Jasmine for writing test suites.
+
+Aside from being easier to use in terms of programming language, Protractor is also said to be easier to use than Selenium for Angular apps. It is also built on 
+JavaScript Selenium WebDriver, so your team will gain all of Selenium WebDriver's features in addition to Protractor's other advantages.
+
+Protractor offers what it is called 'Automatic Waiting' functionality, which makes the test to automatically execute the next step without waiting for the 
+webpage and test to sync. 
+Because Protractor is only available in one language, users should be familiar with JavaScript.
+Protractor can also run against your Selenium servers, so you can use it as a supplement to Selenium if you run a lot of Selenium tests.
+
+Watir
+Watir is an abbreviation for Web Application Testing in Ruby. Watir is an open-source Ruby library for web browser automation.
+
+Watir as an alternative to Selenium Test Automation framework operates a variety of browsers, including Safari, Internet Explorer, Firefox, and Chrome, in the same 
+manner as humans use. It offers a full-featured contemporary scripting language that makes building and maintaining test scripts simple.            
+ 
+ SELENIUM :
+                          It is a Testing Tool to automate the web application
+
+SELENIUM Components / Suites                        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

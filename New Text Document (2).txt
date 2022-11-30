@@ -1,0 +1,16 @@
+Pojo
+
+Plain Old Java Object
+
+here we use Encapsulation concept;
+we declare the private variable and try to invoke in another class with help of getters and setters
+
+get() retrive the value of  declared private variable
+set() sets value to the declared private variable
+
+
+
+
+
+
+
