@@ -1,3 +1,4 @@
+ 
 API TESTING
                   API : Application Programming Interface
   
@@ -80,6 +81,7 @@ step 3
        we use the required curd operator with RequestSpecification  refname
 
 		Response response = req.get("parameter");
+
 
 step 4
            convert response to string by asString method

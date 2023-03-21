@@ -255,7 +255,7 @@ WebElement methods
 isDisplsyed()                     it will check the webelement is present in ui or not                      boolean
 isEnabled()                       it will check the webelement is enabled or not                            boolean
 isSelected()                      it will check the webelement is selected or not                           boolean
-getAttribute("attribute name")    it will return attribute value of the given attribute name                String            
+ getAttribute("attribute name")    it will return attribute value of the given attribute name                String            
 
 all the data we send  with refName(WebElement).sendKeys(); into a tag are stored in the attribute name value in that tag itself
 if we whant to get the data we send we can do refName(WebElement).getAttribute(value)
@@ -537,7 +537,7 @@ Relationship axes :
                /.. rep parent
 
 
-Actions
+ Actions
 
         it is a class
         it will perform mouse and keybord functions

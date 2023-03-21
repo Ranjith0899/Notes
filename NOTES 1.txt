@@ -1,4 +1,4 @@
-task --> print vs println
+   task --> print vs println
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -631,7 +631,7 @@ TreeMap :
            it is asynchronised.
            multitherading is possible, process is fast but therad is not safe.
 
-HashMap :
+HashTable :
  
            it is a class.
            it prints in random order.

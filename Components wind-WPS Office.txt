@@ -1,0 +1,216 @@
+﻿Components window.
+The Components window it avilable
+under the Entity info, If it is not avilable
+G10 to window→ Components, After that.
+components will show up under the com Entity
+info. In the fetati floting window in right side
+If you click on component which r/a under
+the entity info it will lapend and
+show some components which avilable
+and have flur option along with it.
+this
+under the Components window you have
+options like edit, beled and statick
+you will have an tool like the under
+components window which will help you to
+open an another component window you can
+use it to seporate group of components.
+Place them with both on any window you
+want.
+The select option let you to select
+the component you want to place into you
+Your model
+The edit Option will let you lo
+the component
+The statics will let
+let you know aboutake
+the geomenty- and info of components
+Tools in the component window
+helps you to Thumbnails of the componend
+Small or large and help you show the
+detials of components along the thumbnails
+and List view option help will only
+list the names of Components
+(4) The Home button let you to see only
+the component's only that are in your
+Model
+The samll down I' button near the
+Home bution allows you to get all the
+model you have in your system
+
+Edge and stel & face styles
+Edge and face styles option es
+avilable under view which will
+help you to change the styles of edge am a
+face bobily.
+View Edge style → probl
+he daes
+Back Edges
+Profiles
+Depthcue
+Edge style have following option
+Edges ? If you turn offedges the all
+edges will be hidden except the outline
+of the geomently to get All ldges back you have
+go to the edge style - Edges and turn it
+on..
+30
+Back edges If you turn on back edges
+Edges behin hidden behind the surface
+will get visible with discontrious lines.
+Profiles > If you furn off the profile
+the outline geomently gets hidden.
+The styles option the avilable in the
+floting window in the right side of schoon
+on you can turn it on by windowb-styles
+under the styles window the first one should
+its the current style used in the model
+Next to it you can see options like
+geled, Idil Mix.
+Selld let you to choose the avilable styles
+in your bystem
+nder to seled the defult styles. 1/6 choosen as
+defult you can switch, whole hole bunch
+of different bylyles also: as such as color
+ses etc.
+The Styles with green stopwatch are.
+quick styles
+Edit option in Styles window let you
+to edit an style with lots of options
+you can edit every single Interface as you want
+The Mix option in style let you 10
+mix tow two or mogie diffrent styles to
+get you an registed style.
+
+Inferencing while drawing lines
+The common inferences avilable in sketch up
+are as follows
+-
+11
+The end point ( Indicated with green dot
+→ The mid point ( Indicaled with blue dot (or)
+on edge (Indicated with red squre doe
+(a))
+on face (Indicated with blue diamond
+dot (0)
+Interbedien ("
+red cross symbol)
+- Axi (Indicaled with the colour of
+daxib you drawing a line on
+Moving or any other work)
+or
+If you are going to draw a line
+first you have to select the origin point
+move it around an black line
+then if you move it around
+will follow you but you can see the cour
+Colver of the line changes to the colour
+of the axis which when it is partlel to
+an axik.
+while drawing on line if you hit
+(+) right key you can only draws line in
+& axib If you hit (+) not the left kly you
+can only draw in yax's if you hit it jup
+Kly you can only draw in 2 acila.
+where ever (4) Down Key used to draw
+or
+line parallel to any line, lage on face
+if you double click I down key it will help
+You to draw perpendicular to aim line, lege or
+surface.
+draw
+Albo if you Mool your line to any
+live near to early montrond Attene in ferences
+It will & how up on the geomently.
+
+
+Entity info
+when you select an edge the detials
+such as tag and length of the edge will
+bed bhour up, you can change the tag and the
+length of it
+Next to that it have opions like soft.
+Smooth and toggles like hidl co) and shadow
+(4)
+The hide will help you hide the geomently
+and shadow let your geomently Cast
+Shadow.
+")
+If you beled an face you will get all
+detials and options as edge but insted of
+length as in edge it shows area for face
+All other are same to edge.
+If you select an loose geomentery which
+have faces and edges it will not show the
+name of the geomently and just the number of Entities
+in that geomently, and don't have length of
+Area in it
+If you select an solid group along with
+add
+tag
+you can give gove instance and type to that
+geomently and it will show the volume of
+the group
+And it also have two more toggles such as
+lock and recive shadow.
+Lock option will be let geomently to be
+locked and makes it unable to edit that
+geomently
+, will help you to hide the
+recive geomently
+shadow if it fall on the geomently
+
+if you select an component it will have
+bame option as group but insted of type
+it have defentions for the component
+
+
+Locking objects.
+Lock is an tool which helps you
+·lock an geomently, to that can not bl
+edited until the geomentlry unlocked.
+After locking the geomentery cannot be
+lolited until the geomentley is unlocked.
+The lock tool is mostly usefull when lots of
+geomently or groups used in your model.
+Select the geomently you want to lock
+right click on the mouse then click on lock
+option.
+Now you beleded geomentary is locked
+which can be indicated by red colour box
+appears when you click on the the locked
+geomently, to unlock it might click on the locked
+glomently click on unlock a option.
+you can lock an group by clicking on
+the geomentsyy
+going to entily info and
+Clicking on Togle to lock and unlock
+once a geomently is locked no changes
+can be done to it until you unlock it
+
+Lo
+Materials window
+The material window can be found
+in the Defult tray on windows and in
+floting window in mac you be pand it by
+clicking on it or by (RP) this symbol in
+default tool bar.
+After you open up the Hatorial window
+You can be the Material colour a roventily
+used in top of the window.
+(This symbol in the window will let
+you create New Material colour with several
+option Buch RGB, color wheel, HLS, HSB)
+Texture, opady etc.
+This symbol let you to the default
+on it
+color by clicking
+Below this you can see set of Material
+colourb under In Model, but you can
+also switch from in model bo many Material
+Colon formals.
+
+
+
+
+
